@@ -9,6 +9,6 @@ public class WeaponShooting : MonoBehaviour, IPlayerAttack
 
     public void Attack()
     {
-        
+        Instantiate(_projectile, _shootingPoint.position, _shootingPoint.rotation);
     }
 }
