@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class WeaponRotation : MonoBehaviour
 {
-   // private Vector2 _mouseInput;
-
     private void Update()
     {
-        Vector2 _mouseInput = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Rotate();
+    }
 
-        float angle = Mathf.Atan2(_mouseInput.y, _mouseInput.x) * Mathf.Rad2Deg;
+    private void Rotate()
+    {
+        Vector2 mouseInput = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        float angle = Mathf.Atan2(mouseInput.y, mouseInput.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
