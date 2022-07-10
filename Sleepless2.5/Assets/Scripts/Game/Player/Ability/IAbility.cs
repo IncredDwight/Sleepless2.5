@@ -1,0 +1,5 @@
+
+interface IAbility
+{
+    void Execute();
+}
