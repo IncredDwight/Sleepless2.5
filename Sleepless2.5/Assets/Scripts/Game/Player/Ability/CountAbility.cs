@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IAbility))]
-public class CooldownAbility : MonoBehaviour
+public class CountAbility : MonoBehaviour
 {
-    [SerializeField] private float _cooldown;
-    private float _currentCooldown;
+    [SerializeField] private int _count;
 
     [SerializeField] private KeyCode _abilityKey = KeyCode.C;
 
@@ -19,13 +18,10 @@ public class CooldownAbility : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(_abilityKey) && _currentCooldown <= 0)
+        if(Input.GetKeyDown(_abilityKey) && _count > 0)
         {
             _ability.Execute();
-            _currentCooldown = _cooldown;
+            _count--;
         }
-
-        if (_currentCooldown > 0)
-            _currentCooldown -= Time.deltaTime;
     }
 }
