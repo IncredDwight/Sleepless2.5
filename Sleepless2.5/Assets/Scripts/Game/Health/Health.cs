@@ -15,12 +15,6 @@ public abstract class Health : MonoBehaviour, ITakeDamage, IHeal
         _health = _maxHealth;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
-            TakeDamage(10);
-    }
-
     public void TakeDamage(float damage)
     {
         _health -= damage;
