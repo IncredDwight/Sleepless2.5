@@ -1,0 +1,5 @@
+
+interface IUltimate
+{
+    void Execute();
+}
