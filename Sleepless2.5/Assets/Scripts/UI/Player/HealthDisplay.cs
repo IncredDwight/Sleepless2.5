@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
+[RequireComponent(typeof(Text))]
 public class HealthDisplay : MonoBehaviour
 {
     private PlayerHealth _playerHealth;
-    private TextMeshProUGUI _healthDisplay;
+    private Text _healthDisplay;
 
     private void Awake()
     {
-        _healthDisplay = GetComponent<TextMeshProUGUI>();
+        _healthDisplay = GetComponent<Text>();
 
         _playerHealth = FindObjectOfType<PlayerHealth>();
         _playerHealth.OnHealthChanged += ChangeDisplay;
