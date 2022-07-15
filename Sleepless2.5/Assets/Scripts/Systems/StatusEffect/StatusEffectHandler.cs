@@ -5,7 +5,6 @@ using System;
 
 public class StatusEffectHandler : MonoBehaviour, IEffectable
 {
-
     public void ApplyEffect(StatusEffectData data)
     {
         Type effectType = Type.GetType(data.Name);
