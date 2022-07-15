@@ -167,7 +167,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 1045069865}
   - component: {fileID: 1045069870}
   - component: {fileID: 1045069869}
+  - component: {fileID: 1045069873}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -823,6 +824,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1045069873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045069864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be88c853a7cc14bd6a65051e04eaf0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118775657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8337793670148108450, guid: d9ab089a6ad014a47b694e895ee2d93a, type: 3}
+      propertyPath: _statusEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: 527b3f91ec3d94333966e98277e939d9, type: 2}
     - target: {fileID: 8337793670148108451, guid: d9ab089a6ad014a47b694e895ee2d93a, type: 3}
       propertyPath: m_Name
       value: Heal
