@@ -11,9 +11,6 @@ public class StatusEffectHandler : MonoBehaviour, IEffectable
     {
         Type effectType = Type.GetType(data.Name);
         Component effect = gameObject.GetComponent(effectType);
-        Debug.Log("Name: " + data.Name);
-        Debug.Log("Effect type: " + effectType);
-        Debug.Log("Effect: " + effect);
         if (effect != null)
         {
             RemoveEffect(data);
