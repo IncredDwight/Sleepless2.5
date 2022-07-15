@@ -28,6 +28,7 @@ public class StatusEffectHandler : MonoBehaviour, IEffectable
         if(effect != null)
         {
             statusEffects.Remove((StatusEffect)effect);
+            Destroy(effect);
         }
     }
 }
