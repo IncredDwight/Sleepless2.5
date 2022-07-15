@@ -57,6 +57,11 @@ public abstract class StatusEffect : MonoBehaviour
         _effectAmount = _data.EffectAmount;
     }
 
+    public void ResetEffect()
+    {
+        _lifeTime = _data.LifeTime;
+    }
+
     protected abstract void Affect();
 
 }
