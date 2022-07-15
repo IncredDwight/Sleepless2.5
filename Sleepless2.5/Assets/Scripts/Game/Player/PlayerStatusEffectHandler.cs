@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class PlayerStatusEffectHandler : MonoBehaviour
+public class PlayerStatusEffectHandler : MonoBehaviour, IEffectable
 {
-    // Start is called before the first frame update
-    void Start()
+    public delegate void EffectApplied(StatusEffect effect);
+    public event EffectApplied OnEffectApplied;
+
+    public delegate void EffectRemoved(StatusEffect effect);
+    public event EffectRemoved OnEffectRemoved;
+
+    public void ApplyEffect(StatusEffectData data)
     {
-        
+        Type effectType = Type.GetType(data.Name);
+        Component effect = gameObject.GetComponent(effectType);
+        if (effect != null)
+            RemoveEffect(data);
+
+        StatusEffect statusEffect = (StatusEffect)gameObject.AddComponent(effectType);
+        OnEffectApplied?.Invoke(statusEffect);
+        statusEffect.SetData(data);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveEffect(StatusEffectData data)
     {
-        
+        Type effectType = Type.GetType(data.Name);
+        Component effect = gameObject.GetComponent(effectType);
+        if (effect != null)
+        {
+            OnEffectRemoved?.Invoke((StatusEffect)effect);
+            Destroy(effect);
+        }
     }
 }
