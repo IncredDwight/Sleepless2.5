@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StatusEffect : MonoBehaviour
+public class StatusEffect : MonoBehaviour
 {
     protected StatusEffectData _data;
 
@@ -12,12 +12,6 @@ public abstract class StatusEffect : MonoBehaviour
     private float _lifeTime;
 
     protected float _effectAmount;
-
-
-    private void OnEnable()
-    {
-        StartEffect();
-    }
 
     private void Update()
     {
@@ -38,15 +32,20 @@ public abstract class StatusEffect : MonoBehaviour
 
     }
 
-    private void StartEffect()
+    protected virtual void StartEffect()
     {
         _isAffecting = true;
     }
 
-    private void EndEffect()
+    protected virtual void EndEffect()
     {
         _isAffecting = false;
         Destroy(this);
+    }
+
+    protected virtual void Affect()
+    {
+
     }
 
     public void SetData(StatusEffectData data)
@@ -55,13 +54,12 @@ public abstract class StatusEffect : MonoBehaviour
         _lifeTime = _data.LifeTime;
         _effectRate = _data.EffectRate;
         _effectAmount = _data.EffectAmount;
+        StartEffect();
     }
 
     public void ResetEffect()
     {
         _lifeTime = _data.LifeTime;
     }
-
-    protected abstract void Affect();
 
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 namespace Pathfinding {
 	using Pathfinding.RVO;
 	using Pathfinding.Util;
+	
 
 	/// <summary>
 	/// AI for following paths.
@@ -439,7 +440,7 @@ namespace Pathfinding {
 					return position + movementPlane.ToWorld(difference);
 				}
 			}
-
+			
 			positionChanged = false;
 			return position;
 		}

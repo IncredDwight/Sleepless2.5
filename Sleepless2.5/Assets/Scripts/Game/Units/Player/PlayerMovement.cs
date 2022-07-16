@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMovable
 {
     [SerializeField] private float _movementSpeed = 5;
 
@@ -33,5 +33,15 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         _rigidbody2d.velocity = _movementDirection * _movementSpeed;
+    }
+
+    public void IncreaseMovementSpeed(float amount)
+    {
+        _movementSpeed += amount;
+    }
+
+    public void DecreaseMovementSpeed(float amount)
+    {
+        _movementSpeed -= amount;
     }
 }

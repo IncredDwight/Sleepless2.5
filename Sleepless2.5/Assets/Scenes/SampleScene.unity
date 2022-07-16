@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d781d1aeb4a944fa801dee6a2c1f07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _totemEffect: {fileID: 11400000, guid: 527b3f91ec3d94333966e98277e939d9, type: 2}
+  _totemEffect: {fileID: 11400000, guid: b1fb6d7eb6d1f4b2ea54238dcbbe1935, type: 2}
   _totemRadius: 3
 --- !u!1 &1906754966
 GameObject:
