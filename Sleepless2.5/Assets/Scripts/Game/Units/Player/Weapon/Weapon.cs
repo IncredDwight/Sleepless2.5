@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IPlayerAttack))]
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour, IAttackable
 {
     [SerializeField] private KeyCode _attackKey = KeyCode.K;
     [SerializeField] private float _attackRate = 0.5f;
@@ -24,4 +24,17 @@ public class Weapon : MonoBehaviour
             _nextAttack = Time.time + _attackRate;
         }
     }
+
+    public void IncreaseAttackRate(float amount)
+    {
+        _attackRate += amount;
+    }
+
+    public void DecreaseAttackRate(float amount)
+    {
+        _attackRate -= amount;
+        if (_attackRate < 0)
+            _attackRate = 0;
+    }
+
 }
