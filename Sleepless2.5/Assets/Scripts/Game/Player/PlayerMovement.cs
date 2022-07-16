@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GetInput()
     {
-        _movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        _movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
     }
 
     private void Move()

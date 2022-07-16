@@ -6,7 +6,6 @@ public abstract class Totem : MonoBehaviour
 {
     [SerializeField] private StatusEffectData _totemEffect;
 
-    private float _nextTotemEffect;
     [SerializeField] private float _totemRadius = 1; 
 
     private void Update()
@@ -22,4 +21,10 @@ public abstract class Totem : MonoBehaviour
     }   
 
     protected abstract void ApplyEffect(StatusEffectData effect, Collider2D[] target);
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, _totemRadius);
+    }
 }
