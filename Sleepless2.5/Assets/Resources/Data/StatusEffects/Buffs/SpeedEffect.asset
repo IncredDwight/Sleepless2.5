@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SpeedEffect
   m_EditorClassIdentifier: 
   Name: SpeedStatusEffect
-  EffectAmount: 10
+  EffectAmount: 1
   EffectRate: 0
   LifeTime: 5

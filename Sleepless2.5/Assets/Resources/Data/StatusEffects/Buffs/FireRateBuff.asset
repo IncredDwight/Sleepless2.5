@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c95251abf255a45d6a6b2610d49ded5a, type: 3}
-  m_Name: PoisonStatusEffect
+  m_Name: FireRateBuff
   m_EditorClassIdentifier: 
-  Name: HealthLossStatusEffect
-  EffectAmount: 5
-  EffectRate: 1
+  Name: AttackRateStatusEffect
+  EffectAmount: -0.5
+  EffectRate: 0
   LifeTime: 5

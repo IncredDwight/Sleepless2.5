@@ -17,4 +17,9 @@ public class EnemyMovement : MonoBehaviour, IMovable
     {
         _aiPath.maxSpeed -= amount;
     }
+
+    public float GetMovementSpeed()
+    {
+        return _aiPath.maxSpeed;
+    }
 }

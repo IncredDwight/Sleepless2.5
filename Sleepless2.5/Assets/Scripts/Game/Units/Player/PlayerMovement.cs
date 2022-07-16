@@ -44,4 +44,9 @@ public class PlayerMovement : MonoBehaviour, IMovable
     {
         _movementSpeed -= amount;
     }
+
+    public float GetMovementSpeed()
+    {
+        return _movementSpeed;
+    }
 }

@@ -28,13 +28,20 @@ public class Weapon : MonoBehaviour, IAttackable
     public void IncreaseAttackRate(float amount)
     {
         _attackRate += amount;
+        Debug.Log(+amount);
     }
 
     public void DecreaseAttackRate(float amount)
     {
         _attackRate -= amount;
+        Debug.Log(-amount);
         if (_attackRate < 0)
             _attackRate = 0;
+    }
+
+    public float GetAttackRate()
+    {
+        return _attackRate;
     }
 
 }
