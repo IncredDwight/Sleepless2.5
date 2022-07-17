@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class HealthLossStatusEffect : StatusEffect
 {
-    private ITakeDamage _takeDamage;
+    private Health _health;
 
     private void OnEnable()
     {
-        _takeDamage = GetComponent<ITakeDamage>();
+        _health = GetComponent<Health>();
     }
 
     protected override void Affect()
     {
-        _takeDamage.TakeDamage(_effectAmount);
+        _health.TakeDamage(_effectAmount * _health.GetMaxHealth());
     }
 }

@@ -16,7 +16,7 @@ public class HealthDisplay : MonoBehaviour
         _playerHealth = FindObjectOfType<PlayerHealth>();
         _playerHealth.OnHealthChanged += ChangeDisplay;
 
-        ChangeDisplay(_playerHealth.GetHealth());
+        ChangeDisplay(_playerHealth.GetMaxHealth());
     }
 
     public void ChangeDisplay(float health)

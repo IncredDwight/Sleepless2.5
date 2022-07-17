@@ -8,6 +8,7 @@ public class StatusEffectData : ScriptableObject
 {
     public string Name;
 
+    [Range(0, 1)]
     public float EffectAmount;
     public float EffectRate;
     public float LifeTime;

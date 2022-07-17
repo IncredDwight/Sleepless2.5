@@ -36,9 +36,9 @@ public abstract class Health : MonoBehaviour, ITakeDamage, IHeal
         OnHealthChanged?.Invoke(_health);
     }
 
-    public float GetHealth()
+    public float GetMaxHealth()
     {
-        return _health;
+        return _maxHealth;
     }
 
     protected abstract void Die();
