@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour, IMovable
     private void Update()
     {
         GetInput();
+        if (Input.GetKeyDown(KeyCode.K))
+            Debug.Log("Git test");
     }
 
     private void FixedUpdate()
