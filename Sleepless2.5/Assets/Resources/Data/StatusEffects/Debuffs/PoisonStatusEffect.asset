@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PoisonStatusEffect
   m_EditorClassIdentifier: 
   Name: HealthLossStatusEffect
-  EffectAmount: 5
+  EffectAmount: 0.05
   EffectRate: 1
   LifeTime: 5
