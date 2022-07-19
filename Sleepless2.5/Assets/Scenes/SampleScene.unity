@@ -275,10 +275,10 @@ RectTransform:
   m_Father: {fileID: 2031473368}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 200, y: 200}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &479262207
 MonoBehaviour:
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joystickContainer: {fileID: 479262208}
   _joystickHandler: {fileID: 1294501444}
-  _joystickHandlerRadius: 0
+  _joystickHandlerRadius: 0.5
 --- !u!114 &479262208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4068eed5ffae64b23bb57ec5933b924a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 1.5
   _target: {fileID: 1045069868}
 --- !u!20 &519420031
 Camera:
@@ -659,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e35bba858dfb4508829abe83d15c678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementJoystick: {fileID: 479262207}
   _movementSpeed: 5
 --- !u!50 &1045069866
 Rigidbody2D:

@@ -37,4 +37,9 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
         _direction = Vector2.zero;
         _joystickHandler.rectTransform.anchoredPosition = Vector3.zero;
     }
+
+    public Vector2 GetDirection()
+    {
+        return _direction;
+    }
 }
