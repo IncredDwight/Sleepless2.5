@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WeaponRotation : MonoBehaviour
 {
+    [SerializeField] private Joystick _shootingJoystick;
+
+
     private void Update()
     {
         Rotate();
@@ -11,9 +14,7 @@ public class WeaponRotation : MonoBehaviour
 
     private void Rotate()
     {
-        Vector2 mouseInput = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        float angle = Mathf.Atan2(mouseInput.y, mouseInput.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(_shootingJoystick.GetDirection().y, _shootingJoystick.GetDirection().x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
