@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour, IMovable
 {
+    [SerializeField] private Joystick _movementJoystick;
     [SerializeField] private float _movementSpeed = 5;
 
     private Rigidbody2D _rigidbody2d;
@@ -18,8 +19,6 @@ public class PlayerMovement : MonoBehaviour, IMovable
     private void Update()
     {
         GetInput();
-        if (Input.GetKeyDown(KeyCode.K))
-            Debug.Log("Git test");
     }
 
     private void FixedUpdate()
@@ -29,7 +28,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
     private void GetInput()
     {
-        _movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        _movementDirection = _movementJoystick.GetDirection();
     }
 
     private void Move()
