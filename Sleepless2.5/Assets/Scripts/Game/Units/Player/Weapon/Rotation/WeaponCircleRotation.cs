@@ -7,7 +7,9 @@ public class WeaponCircleRotation : MonoBehaviour
     [SerializeField] private Joystick _shootingJoystick;
     [SerializeField] private Transform _shootingPoint;
 
-    [SerializeField] private float _radius = 3;
+    [SerializeField] private float _minRadius = 3;
+    [SerializeField] private float _radiusExtendAmount = 1;
+    private float _radius;
 
     private float _defaultAngle = Mathf.PI / 2;
     private float _inputAngle;
@@ -27,6 +29,7 @@ public class WeaponCircleRotation : MonoBehaviour
     private void GetInput()
     {
         _inputAngle = Mathf.Atan2(_shootingJoystick.GetDirection().normalized.y, _shootingJoystick.GetDirection().normalized.x);
+        _radius = _minRadius + _shootingJoystick.GetDirection().magnitude * _radiusExtendAmount;
     }
 
 }
