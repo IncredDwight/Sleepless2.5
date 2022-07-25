@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponRotation : MonoBehaviour
+public class WeaponCircleRotation : MonoBehaviour
 {
     [SerializeField] private Joystick _shootingJoystick;
+    [SerializeField] private Transform _shootingPoint;
 
     private float _radius = 3;
-    private Vector2 _startPosition;
-
-    private void Awake()
-    {
-        _startPosition = transform.position;
-    }
-
 
     private void Update()
     {
@@ -23,8 +17,7 @@ public class WeaponRotation : MonoBehaviour
     private void Rotate()
     {
         float angle = Mathf.Atan2(_shootingJoystick.GetDirection().normalized.y, _shootingJoystick.GetDirection().normalized.x);
-        transform.localPosition = new Vector2(Mathf.Cos(angle),Mathf.Sin(angle)) * _radius;
+        _shootingPoint.localPosition = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _radius;
     }
-
 
 }
