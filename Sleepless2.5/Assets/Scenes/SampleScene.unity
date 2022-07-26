@@ -540,8 +540,9 @@ MonoBehaviour:
   - {fileID: 4587956614595793078, guid: 87988f49e3c834602babf636ebd4d8e5, type: 3}
   - {fileID: 152677732065260175, guid: c84791e160db747d1bcec8171b86c4ea, type: 3}
   - {fileID: 928928144474619344, guid: b06fcbf4575b94ff8b35cecbcac3026d, type: 3}
-  _minCoordinate: {x: -30, y: -30}
-  _maxCoordinate: {x: 30, y: 30}
+  _minCoordinate: {x: -10, y: -10}
+  _maxCoordinate: {x: 10, y: 10}
+  _space: 1.35
 --- !u!1 &751771814
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +555,7 @@ GameObject:
   - component: {fileID: 751771817}
   - component: {fileID: 751771816}
   - component: {fileID: 751771818}
+  - component: {fileID: 751771819}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -617,6 +619,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootingJoystick: {fileID: 363514120}
+  _shootingPoint: {fileID: 1171740384}
+  _minRadius: 1.5
+  _radiusExtendAmount: 3
+--- !u!114 &751771819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751771814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47921c8c89353494b81bb692095bc94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _shootingPoint: {fileID: 1171740384}
 --- !u!1 &821657282
 GameObject:
