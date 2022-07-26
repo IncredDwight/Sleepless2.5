@@ -1,0 +1,5 @@
+
+interface IWeaponLock
+{
+    bool IsWeaponLocked();
+}
