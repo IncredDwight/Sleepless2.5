@@ -14,7 +14,6 @@ public class Tile : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Debug.Log(_minPoint + " " + _maxPoint);
         Gizmos.DrawCube((_maxPoint + _minPoint)/2, (_maxPoint - _minPoint) * 1.35f);
     }
 }

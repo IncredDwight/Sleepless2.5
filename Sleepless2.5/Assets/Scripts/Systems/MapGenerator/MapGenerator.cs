@@ -25,14 +25,11 @@ public class MapGenerator : MonoBehaviour
         Vector2 minPoint = TransformExtremums.GetMinPoint(tile.transform.GetChild(0));
         Vector2 maxPoint = TransformExtremums.GetMaxPoint(tile.transform.GetChild(0));
 
-        tile.AddComponent<Tile>().SetBounds(minPoint, maxPoint);
-
         Collider2D[] colliders = Physics2D.OverlapBoxAll((maxPoint + minPoint) / 2, (maxPoint - minPoint) * _space, 0);
         foreach(Collider2D collider in colliders)
             if(collider.transform.parent != tile.transform.GetChild(0))
             {
                 Destroy(tile);
-
             }
 
     }
