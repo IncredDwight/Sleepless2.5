@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(WeaponShooting))]
-public class Turret : MonoBehaviour
+public class Turret : MonoBehaviour, IRadiusVisualize
 {
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private float _radius;
@@ -63,4 +63,13 @@ public class Turret : MonoBehaviour
         return targets.ToArray();
     }
 
+    public float GetRadius()
+    {
+        return _radius;
+    }
+
+    public Vector2 GetCenter()
+    {
+        return _shootPoint.position;
+    }
 }

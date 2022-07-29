@@ -540,6 +540,7 @@ MonoBehaviour:
   - {fileID: 4587956614595793078, guid: 87988f49e3c834602babf636ebd4d8e5, type: 3}
   - {fileID: 152677732065260175, guid: c84791e160db747d1bcec8171b86c4ea, type: 3}
   - {fileID: 928928144474619344, guid: b06fcbf4575b94ff8b35cecbcac3026d, type: 3}
+  - {fileID: 5246033986745329055, guid: faa71d4c0a7234724b6ec513633bf694, type: 3}
   _minCoordinate: {x: -30, y: -30}
   _maxCoordinate: {x: 30, y: 30}
   _space: 1.35
