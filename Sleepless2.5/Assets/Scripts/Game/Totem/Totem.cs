@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Totem : MonoBehaviour
+public abstract class Totem : MonoBehaviour, IRadiusVisualize
 {
     [SerializeField] private StatusEffectData _totemEffect;
 
@@ -22,9 +22,13 @@ public abstract class Totem : MonoBehaviour
 
     protected abstract void ApplyEffect(StatusEffectData effect, Collider2D[] target);
 
-    private void OnDrawGizmosSelected()
+    public float GetRadius()
     {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, _totemRadius);
+        return _totemRadius;
+    }
+
+    public Vector2 GetCenter()
+    {
+        return transform.position;
     }
 }
