@@ -1,0 +1,5 @@
+
+interface IRadiusVisualize
+{
+    float GetRadius();
+}
