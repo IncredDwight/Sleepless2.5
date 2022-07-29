@@ -9,6 +9,11 @@ public class RadiusVisualization : MonoBehaviour
 
     private IRadiusVisualize _radiusVisualize;
 
+    private void Awake()
+    {
+        _radiusVisualize = GetComponent<IRadiusVisualize>();
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = _color;
