@@ -4,49 +4,54 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _tiles;
+    [SerializeField] private GameObject[] _tilePrefabs;
+    private List<GameObject> _tiles = new List<GameObject>();
 
     [SerializeField] private Vector2 _minCoordinate;
     [SerializeField] private Vector2 _maxCoordinate;
     [SerializeField] private float _space = 1.5f;
-    [SerializeField] private float _density = 4;
+    [SerializeField] private float _borderOffset = 10;
 
     private void Start()
     {
-        for (int k = 0; k < _density; k++)
+        for (int i = 0; i < (_maxCoordinate.x - _minCoordinate.x); i++)
         {
-            for (float x = _minCoordinate.x; x < _maxCoordinate.x; x += Random.Range(5, 40))
+            _tiles.Add(Instantiate(_tilePrefabs[Random.Range(0, _tilePrefabs.Length)], Vector2.zero, Quaternion.identity));
+        }
+
+        for (float x = _minCoordinate.x + _borderOffset; x <= _maxCoordinate.x - _borderOffset; x++)
+        {
+            for (float y = _minCoordinate.y + _borderOffset; y <= _maxCoordinate.y - _borderOffset; y++)
             {
-                for (float y = _minCoordinate.y; y < _maxCoordinate.y; y += Random.Range(20, 40))
-                {
+                if (_tiles.Count > 0)
                     Spawn(x, y);
-                }
+
             }
         }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-            Spawn(0, 0);
-        
+        foreach (GameObject leftTile in _tiles)
+            Destroy(leftTile);
     }
 
     private void Spawn(float x, float y)
     {
-        Debug.Log($"Try {x} {y}");
-        Vector2 spawnPosition = new Vector2(x, y);// new Vector2(Random.Range(_minCoordinate.x, _maxCoordinate.x), Random.Range(_minCoordinate.y, _maxCoordinate.y));
-        GameObject tile = Instantiate(_tiles[Random.Range(0, _tiles.Length)], spawnPosition, Quaternion.identity);
+        Vector2 spawnPosition = new Vector2(x, y);
 
-        Vector2 minPoint = TransformExtremums.GetMinPoint(tile.transform.GetChild(0));
-        Vector2 maxPoint = TransformExtremums.GetMaxPoint(tile.transform.GetChild(0));
+        GameObject tile = _tiles[_tiles.Count - 1];
+        tile.transform.position = spawnPosition;
+        Transform blocks = tile.transform.GetChild(0);
 
+        Vector2 minPoint = TransformExtremums.GetMinPoint(blocks);
+        Vector2 maxPoint = TransformExtremums.GetMaxPoint(blocks);
+
+        Physics2D.SyncTransforms();
         Collider2D[] colliders = Physics2D.OverlapBoxAll((maxPoint + minPoint) / 2, (maxPoint - minPoint) * _space, 0);
+
         foreach(Collider2D collider in colliders)
-            if(collider.transform.parent != tile.transform.GetChild(0))
+            if(collider.transform.parent != blocks)
             {
-                Destroy(tile);
+                return;
             }
+        _tiles.RemoveAt(_tiles.Count - 1);
 
     }
 

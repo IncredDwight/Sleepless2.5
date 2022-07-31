@@ -536,14 +536,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d855754cfca64ad0bfcbb64d3a24db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiles:
+  _tilePrefabs:
   - {fileID: 4587956614595793078, guid: 87988f49e3c834602babf636ebd4d8e5, type: 3}
   - {fileID: 152677732065260175, guid: c84791e160db747d1bcec8171b86c4ea, type: 3}
   - {fileID: 928928144474619344, guid: b06fcbf4575b94ff8b35cecbcac3026d, type: 3}
   - {fileID: 5246033986745329055, guid: faa71d4c0a7234724b6ec513633bf694, type: 3}
-  _minCoordinate: {x: -30, y: -30}
-  _maxCoordinate: {x: 30, y: 30}
-  _space: 1.35
+  - {fileID: 7912660224701097860, guid: 322155908ec54458090fb800717dc518, type: 3}
+  - {fileID: 9051770905851120479, guid: ff1b9c03b41aa46a98124a34ca30e048, type: 3}
+  - {fileID: 7211177836196166997, guid: 2806f383a1c9d4f28a8621883f21f3a5, type: 3}
+  - {fileID: 7770360472249729966, guid: 08cb59b17e8a24fd09c6cdc600d39eef, type: 3}
+  - {fileID: 3157780600406731167, guid: f5690274b72514eb090db6c4272a0ef8, type: 3}
+  _minCoordinate: {x: -50, y: -50}
+  _maxCoordinate: {x: 50, y: 50}
+  _space: 2
+  _borderOffset: 10
 --- !u!1 &751771814
 GameObject:
   m_ObjectHideFlags: 0
