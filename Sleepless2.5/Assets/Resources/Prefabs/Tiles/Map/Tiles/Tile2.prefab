@@ -111,7 +111,6 @@ Transform:
   m_Children:
   - {fileID: 769485660298305402}
   - {fileID: 2567115230962297639}
-  - {fileID: 118092063574010510}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -507,6 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 118092063574010510}
   - component: {fileID: 9182775581590915840}
+  - component: {fileID: 6643376812570613950}
   - component: {fileID: 7051738360331486843}
   m_Layer: 0
   m_Name: HealTotem
@@ -523,11 +523,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380354905674148586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.84, y: 1.77, z: 0}
+  m_LocalPosition: {x: -2.8400002, y: 1.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 152677732065260174}
-  m_RootOrder: 2
+  m_Father: {fileID: 769485660298305402}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9182775581590915840
 SpriteRenderer:
@@ -580,6 +580,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6643376812570613950
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380354905674148586}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.3807693, y: 3.3269231}
+    newSize: {x: 2.3807693, y: 3.3269231}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3807693, y: 3.3269231}
+  m_EdgeRadius: 0
 --- !u!114 &7051738360331486843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,6 +2922,7 @@ Transform:
   - {fileID: 1778774208084004121}
   - {fileID: 498079880920354370}
   - {fileID: 3098906723588808615}
+  - {fileID: 118092063574010510}
   m_Father: {fileID: 152677732065260174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

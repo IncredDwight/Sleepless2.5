@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] private GameObject[] _tilePrefabs;
+    [SerializeField] private GameObject _grassPrefab;
     private List<GameObject> _tiles = new List<GameObject>();
 
     [SerializeField] private Vector2 _minCoordinate;
@@ -28,8 +29,20 @@ public class MapGenerator : MonoBehaviour
 
             }
         }
+
         foreach (GameObject leftTile in _tiles)
             Destroy(leftTile);
+        for (float x = _minCoordinate.x + _borderOffset; x <= _maxCoordinate.x - _borderOffset; x+=Random.Range(5, 10))
+        {
+            for (float y = _minCoordinate.y + _borderOffset; y <= _maxCoordinate.y - _borderOffset; y+= Random.Range(5, 10))
+            {
+                GameObject grass = Instantiate(_grassPrefab, new Vector2(x, y), Quaternion.identity);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(grass.transform.position, 0.1f);
+                if (colliders.Length > 1)
+                    Destroy(grass);
+            }
+        }
+
     }
 
     private void Spawn(float x, float y)

@@ -1759,6 +1759,7 @@ Transform:
   - {fileID: 4609851103024524955}
   - {fileID: 3043334195958759701}
   - {fileID: 1367298344666191528}
+  - {fileID: 8866489762931697534}
   m_Father: {fileID: 4587956614595793079}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2100,6 +2101,7 @@ GameObject:
   - component: {fileID: 8866489762931697534}
   - component: {fileID: 3496464667216578920}
   - component: {fileID: 1496341586811747541}
+  - component: {fileID: 5427215858514864002}
   m_Layer: 0
   m_Name: HealTotem
   m_TagString: Untagged
@@ -2115,11 +2117,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4404289657606721385}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.21999979, z: 0}
+  m_LocalPosition: {x: 0.22000003, y: 0.21999979, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4587956614595793079}
-  m_RootOrder: 2
+  m_Father: {fileID: 3268075473275068222}
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3496464667216578920
 SpriteRenderer:
@@ -2186,6 +2188,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _totemEffect: {fileID: 11400000, guid: b1fb6d7eb6d1f4b2ea54238dcbbe1935, type: 2}
   _totemRadius: 6
+--- !u!61 &5427215858514864002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4404289657606721385}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.3807693, y: 3.3269231}
+    newSize: {x: 2.3807693, y: 3.3269231}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3807693, y: 3.3269231}
+  m_EdgeRadius: 0
 --- !u!1 &4497582997909048801
 GameObject:
   m_ObjectHideFlags: 0
@@ -2324,7 +2352,6 @@ Transform:
   m_Children:
   - {fileID: 3268075473275068222}
   - {fileID: 8678203044387385152}
-  - {fileID: 8866489762931697534}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
