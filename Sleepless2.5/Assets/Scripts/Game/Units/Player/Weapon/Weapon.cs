@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(IPlayerAttack))]
+[RequireComponent(typeof(IAttackable))]
 [RequireComponent(typeof(IWeaponLock))]
-public class Weapon : MonoBehaviour, IAttackable
+public class Weapon : MonoBehaviour, IAttackRate
 {
     [SerializeField] private KeyCode _attackKey = KeyCode.K;
     [SerializeField] private float _attackRate = 0.5f;
     private float _nextAttack;
 
-    private IPlayerAttack _playerAttack;
+    private IAttackable _playerAttack;
     private IWeaponLock _weaponLock;
 
     private void Awake()
     {
-        _playerAttack = GetComponent<IPlayerAttack>();
+        _playerAttack = GetComponent<IAttackable>();
         _weaponLock = GetComponent<IWeaponLock>();
     }
 

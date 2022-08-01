@@ -9,11 +9,19 @@ public class TilesGenerator : MonoBehaviour
 
     [SerializeField] private float _space;
 
-    public void Generate(Vector2 minCoordinate, Vector2 maxCoordinate)
+    [SerializeField] private string _parentName = "Tiles";
+
+    public void Generate(Vector2 minCoordinate, Vector2 maxCoordinate, out Transform transform)
     {
+        Transform parent = new GameObject(_parentName).transform;
+        transform = parent;
+
         for (int i = 0; i < (maxCoordinate.x - minCoordinate.x); i++)
         {
-            _tiles.Add(Instantiate(_tilePrefabs[Random.Range(0, _tilePrefabs.Length)], Vector2.zero, Quaternion.identity));
+            GameObject tile = Instantiate(_tilePrefabs[Random.Range(0, _tilePrefabs.Length)], new Vector2(0, 0), Quaternion.identity);
+            _tiles.Add(tile);
+            tile.transform.parent = parent;
+
         }
 
         for (float x = minCoordinate.x; x <= maxCoordinate.x; x++)

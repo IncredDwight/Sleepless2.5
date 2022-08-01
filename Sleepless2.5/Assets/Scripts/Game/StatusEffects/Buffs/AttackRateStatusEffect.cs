@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AttackRateStatusEffect : StatusEffect
 {
-    private IAttackable _attackable;
+    private IAttackRate _attackable;
     private float _defaultRate;
 
     private void OnEnable()
     {
-        _attackable = GetComponent<IAttackable>();
+        _attackable = GetComponent<IAttackRate>();
         if (_attackable == null)
-            _attackable = GetComponentInChildren<IAttackable>();
+            _attackable = GetComponentInChildren<IAttackRate>();
 
         _defaultRate = (_attackable != null) ? _attackable.GetAttackRate() : 0;
     }

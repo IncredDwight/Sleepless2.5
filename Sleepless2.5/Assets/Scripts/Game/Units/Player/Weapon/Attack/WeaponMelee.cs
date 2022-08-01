@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponMelee : MonoBehaviour, IPlayerAttack
+public class WeaponMelee : MonoBehaviour, IAttackable
 {
     [SerializeField] private float _hitRadius = 1;
     [SerializeField] private float _damage = 5;

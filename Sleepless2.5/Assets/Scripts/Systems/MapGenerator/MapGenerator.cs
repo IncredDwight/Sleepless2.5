@@ -10,10 +10,15 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Vector2 _minCoordinate;
     [SerializeField] private Vector2 _maxCoordinate;
 
+    [SerializeField] private string _prefabName = "Map";
+
     private void Awake()
     {
-        _tilesGenerator.Generate(_minCoordinate, _maxCoordinate);
-        _decorationsGenerator.Generate(_minCoordinate, _maxCoordinate);
+        Transform parent = new GameObject(_prefabName).transform;
+        _tilesGenerator.Generate(_minCoordinate, _maxCoordinate, out Transform tilesParent);
+        _decorationsGenerator.Generate(_minCoordinate, _maxCoordinate, out Transform decorationsParent);
+        tilesParent.parent = parent;
+        decorationsParent.parent = parent;
     }
 
     private void OnDrawGizmosSelected()

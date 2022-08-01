@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-interface IPlayerAttack
+public interface IProjectile
 {
-    void Attack();
+    public GameObject Sender { get; set; }
 }
