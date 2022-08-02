@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8204610856377367314}
   - component: {fileID: 8204610856377367315}
-  - component: {fileID: 8204610856377367312}
+  - component: {fileID: 3657617905949350667}
   - component: {fileID: 8204610856377367319}
   - component: {fileID: 8204610856377367308}
   - component: {fileID: 8204610856377367309}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8204610856377367312
+--- !u!61 &3657617905949350667
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -20,7 +20,7 @@ public class DecorationsGenerator : MonoBehaviour
             {
                 GameObject decoration = Instantiate(_decorationPrefab, new Vector2(x, y), Quaternion.identity);
                 decoration.transform.parent = parent;
-                Collider2D[] colliders = Physics2D.OverlapCircleAll(decoration.transform.position, 0.1f);
+                Collider2D[] colliders = Physics2D.OverlapCircleAll(decoration.transform.position, 0.5f);
                 if (colliders.Length > 0)
                     Destroy(decoration);
             }

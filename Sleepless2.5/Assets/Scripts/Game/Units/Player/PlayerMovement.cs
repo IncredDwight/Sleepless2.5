@@ -50,4 +50,9 @@ public class PlayerMovement : MonoBehaviour, IMovable
     {
         return _movementSpeed;
     }
+
+    public float GetMovementDirection()
+    {
+        return _rigidbody2d.velocity.normalized.x;
+    }
 }
