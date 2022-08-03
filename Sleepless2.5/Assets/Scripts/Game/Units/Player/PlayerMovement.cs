@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour, IMovable
 {
-    [SerializeField] private Joystick _movementJoystick;
     [SerializeField] private float _movementSpeed = 5;
 
     private Rigidbody2D _rigidbody2d;
+    private PlayerInput _playerInput;
     private Vector2 _movementDirection;
 
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -28,7 +30,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
     private void GetInput()
     {
-        _movementDirection = _movementJoystick.GetDirection();
+        _movementDirection = _playerInput.GetMovementDirection();
     }
 
     private void Move()

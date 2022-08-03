@@ -6,22 +6,23 @@ using UnityEngine;
 [RequireComponent(typeof(IWeaponLock))]
 public class Weapon : MonoBehaviour, IAttackRate
 {
-    [SerializeField] private KeyCode _attackKey = KeyCode.K;
     [SerializeField] private float _attackRate = 0.5f;
     private float _nextAttack;
 
     private IAttackable _playerAttack;
     private IWeaponLock _weaponLock;
+    private PlayerInput _playerInput;
 
     private void Awake()
     {
         _playerAttack = GetComponent<IAttackable>();
         _weaponLock = GetComponent<IWeaponLock>();
+        _playerInput = FindObjectOfType<PlayerInput>();
     }
 
     private void Update()
     {
-        if(Input.GetKey(_attackKey) && Time.time > _nextAttack && !_weaponLock.IsWeaponLocked())
+        if(_playerInput.GetAttackKey() && Time.time > _nextAttack && !_weaponLock.IsWeaponLocked())
         {
             _playerAttack.Attack();
             _nextAttack = Time.time + _attackRate;
@@ -31,7 +32,6 @@ public class Weapon : MonoBehaviour, IAttackRate
     public void IncreaseAttackRate(float amount)
     {
         _attackRate += amount;
-        Debug.Log(+amount);
     }
 
     public void DecreaseAttackRate(float amount)
