@@ -35,7 +35,7 @@ public class WeaponCircleRotation : MonoBehaviour
     private void GetInput()
     {
         _inputAngle = Mathf.Atan2(_playerInput.GetWeaponDirection().normalized.y, _playerInput.GetWeaponDirection().normalized.x);
-        _radius = _minRadius + _playerInput.GetWeaponDirection().magnitude * _radiusExtendAmount;
+        _radius = _minRadius; //+ _playerInput.GetWeaponDirection().magnitude * _radiusExtendAmount;
     }
 
 }

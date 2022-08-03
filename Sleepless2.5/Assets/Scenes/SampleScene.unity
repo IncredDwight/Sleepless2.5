@@ -631,6 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootingPoint: {fileID: 1171740384}
   _projectile: {fileID: 2106638995910563942, guid: 9f336f306983c470e9f81181803e88a2, type: 3}
+  _sender: {fileID: 1045069864}
 --- !u!114 &751771817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,7 +644,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcda7577d559d4a09b9e6656dc92c4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackKey: 107
   _attackRate: 0.5
 --- !u!114 &751771818
 MonoBehaviour:
@@ -657,7 +657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bcd6e474599482dbf4647847700e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shootingJoystick: {fileID: 363514120}
   _shootingPoint: {fileID: 1171740384}
   _minRadius: 1.5
   _radiusExtendAmount: 3
@@ -918,6 +917,7 @@ GameObject:
   - component: {fileID: 1045069868}
   - component: {fileID: 1045069867}
   - component: {fileID: 1045069866}
+  - component: {fileID: 1045069872}
   - component: {fileID: 1045069871}
   - component: {fileID: 1045069865}
   - component: {fileID: 1045069870}
@@ -942,7 +942,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e35bba858dfb4508829abe83d15c678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementJoystick: {fileID: 479262207}
   _movementSpeed: 5
 --- !u!50 &1045069866
 Rigidbody2D:
@@ -1036,6 +1035,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+--- !u!114 &1045069872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045069864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0a93f0b54784036a533b872a5484f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackKey: 323
 --- !u!114 &1045069873
 MonoBehaviour:
   m_ObjectHideFlags: 0
