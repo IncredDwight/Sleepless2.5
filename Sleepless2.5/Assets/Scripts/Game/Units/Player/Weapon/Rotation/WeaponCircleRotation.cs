@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeaponCircleRotation : MonoBehaviour
 {
-    [SerializeField] private Joystick _shootingJoystick;
     [SerializeField] private Transform _shootingPoint;
 
     [SerializeField] private float _minRadius = 3;
@@ -14,10 +13,17 @@ public class WeaponCircleRotation : MonoBehaviour
     private float _defaultAngle = Mathf.PI / 2;
     private float _inputAngle;
 
+    private PlayerInput _playerInput;
+
+    private void Awake()
+    {
+        _playerInput = FindObjectOfType<PlayerInput>();
+    }
+
     private void Update()
     {
         GetInput();
-        Rotate((_shootingJoystick.GetDirection() != Vector2.zero) ? _inputAngle : _defaultAngle);
+        Rotate((_playerInput.GetWeaponDirection() != Vector2.zero) ? _inputAngle : _defaultAngle);
     }
 
     private void Rotate(float angle)
@@ -28,8 +34,8 @@ public class WeaponCircleRotation : MonoBehaviour
 
     private void GetInput()
     {
-        _inputAngle = Mathf.Atan2(_shootingJoystick.GetDirection().normalized.y, _shootingJoystick.GetDirection().normalized.x);
-        _radius = _minRadius + _shootingJoystick.GetDirection().magnitude * _radiusExtendAmount;
+        _inputAngle = Mathf.Atan2(_playerInput.GetWeaponDirection().normalized.y, _playerInput.GetWeaponDirection().normalized.x);
+        _radius = _minRadius + _playerInput.GetWeaponDirection().magnitude * _radiusExtendAmount;
     }
 
 }
