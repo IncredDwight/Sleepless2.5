@@ -24,6 +24,7 @@ public class Pool : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject obj = Instantiate(_prefab, transform);
+            obj.GetComponent<IPoolObject>().Pool = this;
             AddObject(obj);
         }
     }

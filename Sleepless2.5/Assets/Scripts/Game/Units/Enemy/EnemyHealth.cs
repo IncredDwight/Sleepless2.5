@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
+    private void Awake()
+    {
+        
+    }
+
     protected override void Die()
     {
-        Destroy(gameObject);
+        
     }
 }

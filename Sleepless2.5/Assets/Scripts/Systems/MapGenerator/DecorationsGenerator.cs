@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DecorationsGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject _decorationPrefab;
+    [SerializeField] private GameObject[] _decorationPrefabs;
 
     [SerializeField] private string _parentName = "Decorations";
     [SerializeField] private float _density = 15;
@@ -18,7 +18,7 @@ public class DecorationsGenerator : MonoBehaviour
         {
             for (float y = minCoordinate.y; y <= maxCoordinate.y; y += Random.Range(0.5f, 1f) * _density)
             {
-                GameObject decoration = Instantiate(_decorationPrefab, new Vector2(x, y), Quaternion.identity);
+                GameObject decoration = Instantiate(_decorationPrefabs[Random.Range(0, _decorationPrefabs.Length)], new Vector2(x, y), Quaternion.identity);
                 decoration.transform.parent = parent;
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(decoration.transform.position, 0.5f);
                 if (colliders.Length > 0)
