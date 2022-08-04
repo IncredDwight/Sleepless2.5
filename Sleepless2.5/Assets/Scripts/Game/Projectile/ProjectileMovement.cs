@@ -13,7 +13,6 @@ public class ProjectileMovement : MonoBehaviour
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, _lifeTime);
     }
 
     private void FixedUpdate()
