@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IProjectile
 {
-    public GameObject Sender { get; set; }
+    GameObject Sender { get; set; }
 }
