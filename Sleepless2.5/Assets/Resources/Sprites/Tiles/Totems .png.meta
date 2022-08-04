@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 7ec8d718ac584465cb938be8e237e9e2
+guid: 0f229490e82de4060a2033d3d030870e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3788049211500591338
-    second: HealTotem_0
+      213: 6704651942785093626
+    second: Totems _0
+  - first:
+      213: 4839633214707968668
+    second: Totems _1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealTotem_0
+      name: Totems _0
       rect:
         serializedVersion: 2
-        x: 705
-        y: 522
-        width: 619
-        height: 865
+        x: 272
+        y: 528
+        width: 560
+        height: 1052
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +123,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae8f03b10bad19430800000000000000
-      internalID: 3788049211500591338
+      spriteID: aff86505b65bb0d50800000000000000
+      internalID: 6704651942785093626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Totems _1
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 508
+        width: 644
+        height: 888
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9aa9dd64c4d92340800000000000000
+      internalID: 4839633214707968668
       vertices: []
       indices: 
       edges: []

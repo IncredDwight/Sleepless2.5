@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2ed60180be73042859bd27a170540262
+guid: a6d1b08ebc3c94434888ae7f62e53a2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -539579915749326718
-    second: Turret_0
+      213: -9163426285224168042
+    second: Tile_0
+  - first:
+      213: 9046047427341356226
+    second: Tile_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,22 +109,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Turret_0
+      name: Tile_1
       rect:
         serializedVersion: 2
-        x: 707
-        y: 540
-        width: 535
-        height: 1030
+        x: 868
+        y: 792
+        width: 300
+        height: 420
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28083d9ece60388f0800000000000000
-      internalID: -539579915749326718
+      spriteID: 2cc840805340a8d70800000000000000
+      internalID: 9046047427341356226
       vertices: []
       indices: 
       edges: []
