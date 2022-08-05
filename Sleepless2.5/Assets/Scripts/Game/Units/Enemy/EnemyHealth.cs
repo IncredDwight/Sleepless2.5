@@ -8,7 +8,7 @@ public class EnemyHealth : Health
 
     protected override void Die()
     {
-        PoolManager.Instance.GetPool(_blood).GetObject(transform.position, Quaternion.identity);
+        //PoolManager.Instance.GetPool(_blood).GetObject(transform.position, Quaternion.identity);
         PoolManager.Instance.ReturnToPool(gameObject);
     }
 }
