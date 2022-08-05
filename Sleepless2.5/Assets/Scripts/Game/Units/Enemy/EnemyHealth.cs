@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class EnemyHealth : Health
 {
-    private void Awake()
-    {
-        
-    }
+    [SerializeField] private GameObject _blood;
 
     protected override void Die()
     {
-        
+        PoolManager.Instance.GetPool(_blood).GetObject(transform.position, Quaternion.identity);
+        PoolManager.Instance.ReturnToPool(gameObject);
     }
 }

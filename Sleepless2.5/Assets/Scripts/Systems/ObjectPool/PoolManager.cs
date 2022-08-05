@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoolManager : Singleton<PoolManager>
 {
-    private Dictionary<int, Pool> _pools = new Dictionary<int, Pool>();
+    private Dictionary<GameObject, Pool> _pools = new Dictionary<GameObject, Pool>();
 
     private Transform _poolsParent;
     private string _poolsParentName = "[POOLS]";
@@ -16,27 +16,35 @@ public class PoolManager : Singleton<PoolManager>
 
     public Pool CreatePool(GameObject prefab, int poolSize = 5)
     {
-        int poolId = prefab.GetInstanceID();
-
-        if(_pools.ContainsKey(poolId) == false)
+        if(_pools.ContainsKey(prefab) == false)
         {
             Pool pool = new GameObject($"{prefab.name} Pool").AddComponent<Pool>();
             pool.transform.SetParent(_poolsParent);
             pool.InitializePool(prefab, poolSize);
-            _pools.Add(poolId, pool);
+            _pools.Add(prefab, pool);
 
             return pool;
         }
 
-        return _pools[poolId];
+        return _pools[prefab];
     }
 
-    public Pool GetPool(int id)
+    public void ReturnToPool(GameObject obj)
     {
-        if (_pools.ContainsKey(id))
-            return _pools[id];
+        Pool pool = obj.transform.parent?.GetComponent<Pool>();
+        if(pool != null)
+        {
+            pool.AddObject(obj);
+        }
+    }
 
-        return null;
+    public Pool GetPool(GameObject prefab)
+    {
+        if (_pools.ContainsKey(prefab))
+            return _pools[prefab];
+
+        else
+            return CreatePool(prefab);
     }
 
 }

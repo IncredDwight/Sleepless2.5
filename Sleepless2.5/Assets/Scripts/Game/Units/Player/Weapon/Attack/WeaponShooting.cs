@@ -19,6 +19,5 @@ public class WeaponShooting : MonoBehaviour, IAttackable
     {
         Projectile projectile = _projectilesPool.GetObject(_shootingPoint.position, _shootingPoint.rotation).GetComponent<Projectile>();
         projectile.Sender = (_sender == null) ? gameObject : _sender;
-        projectile.Pool = _projectilesPool;
     }
 }

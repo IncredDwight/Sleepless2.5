@@ -15,7 +15,7 @@ public class Pool : MonoBehaviour
 
     public void AddObject(GameObject obj)
     {
-        obj.SetActive(false);
+        obj.SetActive(false); 
         _objects.Enqueue(obj);
     }
 
@@ -24,7 +24,6 @@ public class Pool : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject obj = Instantiate(_prefab, transform);
-            obj.GetComponent<IPoolObject>().Pool = this;
             AddObject(obj);
         }
     }
