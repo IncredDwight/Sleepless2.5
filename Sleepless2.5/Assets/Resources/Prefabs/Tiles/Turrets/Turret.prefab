@@ -106,12 +106,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -539579915749326718, guid: 2ed60180be73042859bd27a170540262, type: 3}
+  m_Sprite: {fileID: 6704651942785093626, guid: 0f229490e82de4060a2033d3d030870e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.0576923, y: 3.9615386}
+  m_Size: {x: 2.1538463, y: 4.046154}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -134,8 +134,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.0576923, y: 3.9615386}
-    newSize: {x: 2.0576923, y: 3.9615386}
+    oldSize: {x: 2.1538463, y: 4.046154}
+    newSize: {x: 2.1538463, y: 4.046154}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootingPoint: {fileID: 8104037630065203956}
   _projectile: {fileID: 2106638995910563942, guid: 9f336f306983c470e9f81181803e88a2, type: 3}
+  _sender: {fileID: 0}
 --- !u!114 &8104037630602413096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 8104037630065203956}
+  _target: 1
   _radius: 5
   _fireRate: 1
 --- !u!114 &-8406654809200387361

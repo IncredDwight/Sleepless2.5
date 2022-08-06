@@ -6,6 +6,8 @@ using UnityEngine;
 public class Turret : MonoBehaviour, IRadiusVisualize
 {
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private Target _target = Target.Enemy;
+    
     [SerializeField] private float _radius;
     [SerializeField] private float _fireRate;
     private float _nextFire;
@@ -50,7 +52,7 @@ public class Turret : MonoBehaviour, IRadiusVisualize
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            if (colliders[i].GetComponent<IMovable>() != null)
+            if (colliders[i].CompareTag(_target.ToString()))
                 checkingTargets.Add(colliders[i].transform);
         }
         for (int i = 0; i < checkingTargets.Count; i++)
