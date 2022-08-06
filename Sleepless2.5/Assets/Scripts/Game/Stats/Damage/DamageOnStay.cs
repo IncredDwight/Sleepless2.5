@@ -12,7 +12,7 @@ public class DamageOnStay : MonoBehaviour
     {
         if (Time.time > _nextDamage)
         {
-            ITakeDamage takeDamage = collision.gameObject.GetComponent<ITakeDamage>();
+            ITakeDamage takeDamage = collision.gameObject.GetComponent<PlayerHealth>();
             takeDamage?.TakeDamage(_damage);
             _nextDamage = Time.time + _damageRate;
         }

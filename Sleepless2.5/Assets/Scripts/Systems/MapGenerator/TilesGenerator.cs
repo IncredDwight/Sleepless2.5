@@ -18,7 +18,7 @@ public class TilesGenerator : MonoBehaviour
 
         for (int i = 0; i < (maxCoordinate.x - minCoordinate.x); i++)
         {
-            GameObject tile = Instantiate(_tilePrefabs[Random.Range(0, _tilePrefabs.Length)], minCoordinate * 2, Quaternion.identity);
+            GameObject tile = Instantiate(_tilePrefabs[Random.Range(0, _tilePrefabs.Length)], new Vector2(0, 500), Quaternion.identity);
             _tiles.Add(tile);
             tile.transform.parent = parent;
 

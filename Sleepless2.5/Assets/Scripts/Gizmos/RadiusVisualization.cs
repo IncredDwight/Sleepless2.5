@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IRadiusVisualize))]
+[ExecuteInEditMode]
 public class RadiusVisualization : MonoBehaviour
 {
     [SerializeField] private Color _color = Color.white;
