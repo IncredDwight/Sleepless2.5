@@ -8,18 +8,18 @@ public class CooldownAbility : MonoBehaviour
     [SerializeField] private float _cooldown;
     private float _currentCooldown;
 
-    [SerializeField] private KeyCode _abilityKey = KeyCode.C;
-
+    private PlayerInput _playerInput;
     private IAbility _ability;
 
     private void Awake()
     {
         _ability = GetComponent<IAbility>();
+        _playerInput = FindObjectOfType<PlayerInput>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(_abilityKey) && _currentCooldown <= 0)
+        if (_playerInput.GetAbilityKey() && _currentCooldown <= 0)
         {
             _ability.Execute();
             _currentCooldown = _cooldown;

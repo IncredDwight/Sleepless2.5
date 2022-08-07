@@ -6,7 +6,7 @@ public class AutomaticPoolReturn : MonoBehaviour
 {
     [SerializeField] private float _returnTime = 0;
 
-    private void Awake()
+    private void OnEnable()
     {
         Invoke(nameof(Return), _returnTime);
     }

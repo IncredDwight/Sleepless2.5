@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 20
-  _abilityKey: 99
 --- !u!114 &1524375895380135641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackKey: 323
+  _abilityKey: 99
 --- !u!1 &2808155464451476525
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +412,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2311659948842064771, guid: 2c16548a402574712806b3d6f8de3045, type: 3}
+  m_Sprite: {fileID: -2207236230058056998, guid: e893bffe9fe4649ab9972269574867a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
