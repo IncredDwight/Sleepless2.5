@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Health : MonoBehaviour, ITakeDamage, IHeal
+[RequireComponent(typeof(IDie))]
+public class Health : MonoBehaviour, ITakeDamage, IHeal
 {
     [SerializeField] private float _maxHealth;
     private float _health;
@@ -10,9 +11,16 @@ public abstract class Health : MonoBehaviour, ITakeDamage, IHeal
     public delegate void HealthChanged(float health);
     public event HealthChanged OnHealthChanged;
 
-    private void Awake()
+    private IDie _death;
+
+    private void OnEnable()
     {
         _health = _maxHealth;
+    }
+
+    private void Awake()
+    {
+        _death = GetComponent<IDie>();
     }
 
     public void TakeDamage(float damage)
@@ -21,7 +29,7 @@ public abstract class Health : MonoBehaviour, ITakeDamage, IHeal
         if (_health <= 0)
         {
             _health = 0;
-            Die();
+            _death.Die();
         }
 
         OnHealthChanged?.Invoke(_health);
@@ -40,6 +48,4 @@ public abstract class Health : MonoBehaviour, ITakeDamage, IHeal
     {
         return _maxHealth;
     }
-
-    protected abstract void Die();
 }

@@ -8,11 +8,12 @@ using Pathfinding;
 public class EnemyMovement : MonoBehaviour, IMovable
 {
     private AIPath _aiPath;
+    private Target _target = Target.Player;
 
     private void Awake()
     {
         _aiPath = GetComponent<AIPath>();
-        GetComponent<AIDestinationSetter>().target = FindObjectOfType<PlayerHealth>().transform;
+        GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag(_target.ToString()).transform;
     }
 
     public void DecreaseMovementSpeed(float amount)

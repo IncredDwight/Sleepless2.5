@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 8104037630602413097}
   - component: {fileID: 8104037630602413096}
   - component: {fileID: -8406654809200387361}
+  - component: {fileID: 5600011519389142596}
+  - component: {fileID: -6740717850006026847}
   m_Layer: 2
   m_Name: Turret
   m_TagString: Untagged
@@ -171,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 8104037630065203956}
-  _target: 1
-  _radius: 5
+  _target: 2
+  _radius: 6
   _fireRate: 1
 --- !u!114 &-8406654809200387361
 MonoBehaviour:
@@ -187,3 +189,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &5600011519389142596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104037630602413103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ebacccca59b45b280f3ce4e81e0779, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+--- !u!114 &-6740717850006026847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104037630602413103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5770f03b7d8b4b5f8cc54b8f9088e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

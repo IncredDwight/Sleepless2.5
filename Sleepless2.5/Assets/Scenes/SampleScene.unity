@@ -1219,6 +1219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8713f80d1aa4cf5a047ff4efe643b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerHealth: {fileID: 0}
 --- !u!1 &1294501442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,42 +1625,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2808155464358828738, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
-    - {fileID: 2808155464358828764, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
---- !u!1 &1991562459 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2808155464358828762, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
-  m_PrefabInstance: {fileID: 1834917985}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1991562460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991562459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554f98afb74294d9e921048aec089182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementJoystick: {fileID: 479262207}
-  _weaponJoystick: {fileID: 363514120}
---- !u!114 &1991562463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991562459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3f915516c3794c40b9c75518c6a75db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _turretPrefab: {fileID: 8104037630602413103, guid: 531ddb2ecd04e4a4eb1955c0a9e89632, type: 3}
 --- !u!4 &1991562468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2808155464358828766, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}

@@ -6,14 +6,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class HealthDisplay : MonoBehaviour
 {
-    private PlayerHealth _playerHealth;
+    [SerializeField] private Health _playerHealth;
     private Text _healthDisplay;
 
     private void Awake()
     {
         _healthDisplay = GetComponent<Text>();
 
-        _playerHealth = FindObjectOfType<PlayerHealth>();
         _playerHealth.OnHealthChanged += ChangeDisplay;
 
         ChangeDisplay(_playerHealth.GetMaxHealth());
