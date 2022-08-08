@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: TripleShotStatusEffect
   EffectAmount: 3
   EffectRate: 0
-  LifeTime: 10
+  LifeTime: 60
