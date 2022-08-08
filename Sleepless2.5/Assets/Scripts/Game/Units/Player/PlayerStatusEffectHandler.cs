@@ -19,7 +19,6 @@ public class PlayerStatusEffectHandler : MonoBehaviour, IEffectable
             effect.ResetEffect();
         else
         {
-
             StatusEffect statusEffect = (StatusEffect)gameObject.AddComponent(effectType);
             OnEffectApplied?.Invoke(statusEffect);
             statusEffect.SetData(data);

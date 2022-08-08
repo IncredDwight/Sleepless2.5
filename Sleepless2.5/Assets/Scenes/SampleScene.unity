@@ -1867,6 +1867,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2808155464065071706, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+      propertyPath: _projectileAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2808155464358828762, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1915,9 +1919,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2808155464358828765, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
-    - {fileID: 2808155464358828738, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
 --- !u!1 &1991562459 stripped
 GameObject:
@@ -1953,21 +1955,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2808155464358828766, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
   m_PrefabInstance: {fileID: 1834917985}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1991562470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991562459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554f98afb74294d9e921048aec089182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementJoystick: {fileID: 479262207}
-  _weaponJoystick: {fileID: 363514120}
-  _abilityButton: {fileID: 871057933}
 --- !u!212 &2030218842 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2808155465197442728, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}

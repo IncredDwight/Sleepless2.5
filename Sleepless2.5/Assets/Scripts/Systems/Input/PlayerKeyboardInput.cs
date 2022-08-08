@@ -6,6 +6,7 @@ public class PlayerKeyboardInput : PlayerInput
 {
     [SerializeField] private KeyCode _attackKey = KeyCode.Mouse0;
     [SerializeField] private KeyCode _abilityKey = KeyCode.C;
+    [SerializeField] private KeyCode _ultimateKey = KeyCode.U;
 
     private const string Horizontal = "Horizontal";
     private const string Vertical = "Vertical";
@@ -28,5 +29,10 @@ public class PlayerKeyboardInput : PlayerInput
     public override bool GetAbilityKey()
     {
         return Input.GetKeyDown(_abilityKey);
+    }
+
+    public override bool GetUltimateKey()
+    {
+        return Input.GetKeyDown(_ultimateKey);
     }
 }

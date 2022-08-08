@@ -8,6 +8,7 @@ public class PlayerMobileInput : PlayerInput
     [SerializeField] private Joystick _movementJoystick;
     [SerializeField] private Joystick _weaponJoystick;
     [SerializeField] private CustomButton _abilityButton;
+    [SerializeField] private CustomButton _ultimateButton;
 
     public override Vector2 GetMovementDirection()
     {
@@ -27,5 +28,10 @@ public class PlayerMobileInput : PlayerInput
     public override bool GetAbilityKey()
     {
         return _abilityButton.PublicIsPressed();
+    }
+
+    public override bool GetUltimateKey()
+    {
+        return _ultimateButton.PublicIsPressed();
     }
 }

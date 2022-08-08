@@ -3,26 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IUltimate))]
+[RequireComponent(typeof(PlayerInput))]
 public class UltimateHandler : MonoBehaviour
 {
-    [SerializeField] private KeyCode _ultimateKey = KeyCode.U;
-    [SerializeField] private float _requiredPowerAmount = 100;
+    [SerializeField] private float _requiredPowerAmount = 1000;
     private float _power;
 
     private IUltimate _ultimate;
+    private PlayerInput _playerInput;
 
     private void Awake()
     {
         _ultimate = GetComponent<IUltimate>();
+        _playerInput = GetComponent<PlayerInput>();
+        GameEvents.Instance.OnUnitDied += AddPower;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(_ultimateKey) && _power >= _requiredPowerAmount)
+        if (_playerInput.GetUltimateKey() && _power >= _requiredPowerAmount)
+        {
             _ultimate.Execute();
+            _power = 0;
+        }
     }
 
-    public void AddPower(float amount)
+    private void AddPower(float amount)
     {
         _power += amount;
         if (_power >= _requiredPowerAmount)
