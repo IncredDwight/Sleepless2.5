@@ -15,10 +15,9 @@ public class WeaponShooting : MonoBehaviour, IAttackable
     {
         for (int i = 0; i < _projectileAmount; i++)
         {
-            Projectile projectile = PoolManager.Instance.GetPool(_projectile).GetObject(_shootingPoint.position, _shootingPoint.rotation).GetComponent<Projectile>();
+            GameObject projectile = PoolManager.Instance.GetPool(_projectile).GetObject(_shootingPoint.position, _shootingPoint.rotation);
             if(_projectileAmount > 1)
                 projectile.transform.Rotate(new Vector3(0, 0, (i - 1) * _projectileAngle));
-            projectile.Sender = (_sender == null) ? gameObject : _sender;
         }
     }
 

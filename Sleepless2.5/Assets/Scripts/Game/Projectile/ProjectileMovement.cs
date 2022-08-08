@@ -6,7 +6,6 @@ using UnityEngine;
 public class ProjectileMovement : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed = 10;
-    [SerializeField] private float _lifeTime = 10;
 
     private Rigidbody2D _rigidbody2D;
 

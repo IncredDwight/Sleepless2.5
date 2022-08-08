@@ -19,7 +19,7 @@ public class Pool : MonoBehaviour
         _objects.Enqueue(obj);
     }
 
-    private void GrowPool(int amount = 1)
+    private void GrowPool(int amount = 5)
     {
         for (int i = 0; i < amount; i++)
         {

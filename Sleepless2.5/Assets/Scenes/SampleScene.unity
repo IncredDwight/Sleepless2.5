@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 221681571}
   - component: {fileID: 221681570}
   - component: {fileID: 221681569}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Border (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 479373489}
   - component: {fileID: 479373488}
   - component: {fileID: 479373487}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Border (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1762,7 +1762,7 @@ GameObject:
   - component: {fileID: 1791317022}
   - component: {fileID: 1791317021}
   - component: {fileID: 1791317020}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Border (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2073,7 +2073,7 @@ GameObject:
   - component: {fileID: 2090321483}
   - component: {fileID: 2090321482}
   - component: {fileID: 2090321481}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
