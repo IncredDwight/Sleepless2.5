@@ -15,11 +15,14 @@ public class Pool : MonoBehaviour
 
     public void AddObject(GameObject obj)
     {
-        obj.SetActive(false); 
-        _objects.Enqueue(obj);
+        if (!_objects.Contains(obj))
+        {
+            _objects.Enqueue(obj);
+            obj.SetActive(false);
+        }
     }
 
-    private void GrowPool(int amount = 5)
+    private void GrowPool(int amount = 1)
     {
         for (int i = 0; i < amount; i++)
         {

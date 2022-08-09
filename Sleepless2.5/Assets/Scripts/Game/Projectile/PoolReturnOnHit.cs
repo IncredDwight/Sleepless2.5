@@ -9,6 +9,8 @@ public class PoolReturnOnHit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == _obstacleLayer)
+        {
             PoolManager.Instance.ReturnToPool(gameObject);
+        }
     }
 }

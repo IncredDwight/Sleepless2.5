@@ -15,6 +15,9 @@ public class DirectionView : MonoBehaviour
 
     private void Update()
     {
-        _spriteRenderer.flipX = _movement.GetMovementDirection() < 0;
+        if (_movement.GetMovementDirection() > 0)
+            _spriteRenderer.flipX = false;
+        else if (_movement.GetMovementDirection() < 0)
+            _spriteRenderer.flipX = true;
     }
 }
