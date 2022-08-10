@@ -6,6 +6,7 @@ public class PoolManager : Singleton<PoolManager>
 {
     private Dictionary<GameObject, Pool> _pools = new Dictionary<GameObject, Pool>();
 
+    private Vector3 _poolsPosition = new Vector3(-500, -500);
     private Transform _poolsParent;
     private string _poolsParentName = "[POOLS]";
 
@@ -19,6 +20,7 @@ public class PoolManager : Singleton<PoolManager>
         if(_pools.ContainsKey(prefab) == false)
         {
             Pool pool = new GameObject($"{prefab.name} Pool").AddComponent<Pool>();
+            pool.transform.position = _poolsPosition;
             pool.transform.SetParent(_poolsParent);
             pool.InitializePool(prefab, poolSize);
             _pools.Add(prefab, pool);

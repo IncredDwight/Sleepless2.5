@@ -12,8 +12,10 @@ public class Turret : MonoBehaviour, IRadiusVisualize
     [SerializeField] private float _fireRate;
     private float _nextFire;
 
-    private Transform[] _targets;
+    private GameObject _currentTarget;
     private WeaponShooting _shooting;
+
+    private float _rotationSpeed = 20;
 
     private void Awake()
     {
@@ -22,11 +24,10 @@ public class Turret : MonoBehaviour, IRadiusVisualize
 
     private void Update()
     {
-        _targets = GetTargets();
-
-        if (_targets.Length > 0)
+        _currentTarget = GetTarget();
+        if (_currentTarget != null)
         {
-            Aim(_targets[0].position);
+            Aim(_currentTarget.transform.position);
 
             if (Time.time > _nextFire)
             {
@@ -40,10 +41,10 @@ public class Turret : MonoBehaviour, IRadiusVisualize
     {
         Vector2 direction = target - _shootPoint.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        _shootPoint.transform.rotation = Quaternion.Euler(0, 0, angle);
+        _shootPoint.rotation = Quaternion.Lerp(_shootPoint.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * _rotationSpeed);
     }
 
-    private Transform[] GetTargets()
+    private GameObject GetTarget()
     {
         List<Transform> targets = new List<Transform>();
 
@@ -62,7 +63,7 @@ public class Turret : MonoBehaviour, IRadiusVisualize
                 targets.Add(hit.collider.transform);
         }
 
-        return targets.ToArray();
+        return (targets.Count > 0) ? targets[0].gameObject : null;
     }
 
     public float GetRadius()

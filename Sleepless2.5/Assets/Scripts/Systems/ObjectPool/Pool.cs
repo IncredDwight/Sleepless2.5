@@ -19,6 +19,7 @@ public class Pool : MonoBehaviour
         {
             _objects.Enqueue(obj);
             obj.SetActive(false);
+            obj.transform.localPosition = Vector3.zero;
         }
     }
 
