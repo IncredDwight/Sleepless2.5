@@ -11,4 +11,6 @@ public class StatusEffectData : ScriptableObject
     public float EffectAmount;
     public float EffectRate;
     public float LifeTime;
+
+    public GameObject Prefab;
 }

@@ -41,6 +41,13 @@ public class Weapon : MonoBehaviour, IAttackRate
             _attackRate = 0;
     }
 
+    public void SetAttackRate(float amount)
+    {
+        _attackRate = amount;
+        if (_attackRate < 0)
+            _attackRate = 0;
+    }
+
     public float GetAttackRate()
     {
         return _attackRate;

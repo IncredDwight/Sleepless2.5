@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1784636161666402349}
   - component: {fileID: 7213565001826852503}
   - component: {fileID: 4671539764633146794}
+  - component: {fileID: 6778121891016710079}
   m_Layer: 2
   m_Name: CrossbowProjectile
   m_TagString: Untagged
@@ -173,3 +174,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28abcbfa9787e401892fcabf6ed5fd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6778121891016710079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784636161666402338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938326ddf8ebe4177b95ee3ea67f78c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: 2

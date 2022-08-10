@@ -9,18 +9,13 @@ public class WeaponShooting : MonoBehaviour, IAttackable
 
     [SerializeField] private int _projectileAmount = 1;
     private int _projectileAngle = 10;
-    private Pool _pool;
-
-    private void Awake()
-    {
-        _pool = PoolManager.Instance.GetPool(_projectile);
-    }
 
     public void Attack()
     {
+        Pool pool = PoolManager.Instance.GetPool(_projectile);
         for (int i = 0; i < _projectileAmount; i++)
         {
-            GameObject projectile = _pool.GetObject(_shootingPoint.position, _shootingPoint.rotation);
+            GameObject projectile = pool.GetObject(_shootingPoint.position, _shootingPoint.rotation);
             if (_projectileAmount > 1)
             {
                 projectile.transform.Rotate(new Vector3(0, 0, (i - 1) * _projectileAngle));
@@ -32,6 +27,11 @@ public class WeaponShooting : MonoBehaviour, IAttackable
     public void SetProjectile(GameObject projectile)
     {
         _projectile = projectile;
+    }
+
+    public GameObject GetProjectile()
+    {
+        return _projectile;
     }
 
     public void SetProjectileAmount(int amount)
