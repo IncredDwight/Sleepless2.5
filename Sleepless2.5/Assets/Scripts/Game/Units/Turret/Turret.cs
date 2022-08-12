@@ -24,8 +24,9 @@ public class Turret : MonoBehaviour, IRadiusVisualize
 
     private void Update()
     {
-        _currentTarget = GetTarget();
-        if (_currentTarget != null)
+        if (_currentTarget == null)
+            _currentTarget = GetTarget();
+        else if (_currentTarget.activeInHierarchy && IsInSight(_currentTarget))
         {
             Aim(_currentTarget.transform.position);
 
@@ -35,6 +36,8 @@ public class Turret : MonoBehaviour, IRadiusVisualize
                 _nextFire = Time.time + _fireRate;
             }
         }
+        else
+            _currentTarget = null;
     }
 
     private void Aim(Vector3 target)
@@ -44,26 +47,32 @@ public class Turret : MonoBehaviour, IRadiusVisualize
         _shootPoint.rotation = Quaternion.Lerp(_shootPoint.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * _rotationSpeed);
     }
 
+    private bool IsInSight(GameObject target)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, target.transform.position - _shootPoint.position);
+        return hit.collider.gameObject == target;
+    }
+
     private GameObject GetTarget()
     {
-        List<Transform> targets = new List<Transform>();
+        Queue<Transform> targets = new Queue<Transform>();
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_shootPoint.position, _radius);
-        List<Transform> checkingTargets = new List<Transform>();
+        //List<Transform> checkingTargets = new List<Transform>();
 
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].CompareTag(_target.ToString()))
-                checkingTargets.Add(colliders[i].transform);
+               targets.Enqueue(colliders[i].transform);
         }
-        for (int i = 0; i < checkingTargets.Count; i++)
+        /*for (int i = 0; i < checkingTargets.Count; i++)
         {
             RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, checkingTargets[i].transform.position - _shootPoint.position);
             if (hit.collider.gameObject == checkingTargets[i].gameObject)
                 targets.Add(hit.collider.transform);
         }
-
-        return (targets.Count > 0) ? targets[0].gameObject : null;
+        */
+        return (targets.Count > 0) ? targets.Dequeue().gameObject : null;
     }
 
     public float GetRadius()

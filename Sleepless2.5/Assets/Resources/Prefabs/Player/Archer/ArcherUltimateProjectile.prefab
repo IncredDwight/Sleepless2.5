@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1961325293037508027}
   - component: {fileID: 1961325293037508026}
   - component: {fileID: 7487217828690936576}
-  - component: {fileID: 4839381124324919357}
+  - component: {fileID: -7804370925137762768}
   m_Layer: 2
   m_Name: ArcherUltimateProjectile
   m_TagString: Untagged
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 20
   _target: 2
---- !u!114 &4839381124324919357
+--- !u!114 &-7804370925137762768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1961325293037508021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28abcbfa9787e401892fcabf6ed5fd63, type: 3}
+  m_Script: {fileID: 11500000, guid: f50a9cb9878ce4b9a8c91a7aef28e41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _returnTime: 10
