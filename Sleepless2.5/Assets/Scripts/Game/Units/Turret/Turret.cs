@@ -58,20 +58,13 @@ public class Turret : MonoBehaviour, IRadiusVisualize
         Queue<Transform> targets = new Queue<Transform>();
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_shootPoint.position, _radius);
-        //List<Transform> checkingTargets = new List<Transform>();
 
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].CompareTag(_target.ToString()))
                targets.Enqueue(colliders[i].transform);
         }
-        /*for (int i = 0; i < checkingTargets.Count; i++)
-        {
-            RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, checkingTargets[i].transform.position - _shootPoint.position);
-            if (hit.collider.gameObject == checkingTargets[i].gameObject)
-                targets.Add(hit.collider.transform);
-        }
-        */
+
         return (targets.Count > 0) ? targets.Dequeue().gameObject : null;
     }
 
