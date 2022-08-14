@@ -49,7 +49,7 @@ public class Turret : MonoBehaviour, IRadiusVisualize
 
     private bool IsInSight(GameObject target)
     {
-        RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, target.transform.position - _shootPoint.position);
+        RaycastHit2D hit = Physics2D.Raycast(_shootPoint.position, target.transform.position - _shootPoint.position, Mathf.Infinity, ~(1 << gameObject.layer));
         return hit.collider.gameObject == target;
     }
 

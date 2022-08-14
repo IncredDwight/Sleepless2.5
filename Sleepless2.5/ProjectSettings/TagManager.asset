@@ -12,8 +12,8 @@ TagManager:
   - PathfindingObstacle
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

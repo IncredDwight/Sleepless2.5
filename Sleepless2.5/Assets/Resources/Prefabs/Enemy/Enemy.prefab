@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 7317172882469472562}
   - component: {fileID: 3891163447236079485}
   - component: {fileID: 3465797434888331796}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -288,4 +288,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5770f03b7d8b4b5f8cc54b8f9088e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blood: {fileID: 4891341257736035576, guid: a6261e1d25f0f4b2bb07c2d5e52a33b5, type: 3}

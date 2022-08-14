@@ -1666,6 +1666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2808155464065071700, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2808155464358828762, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1726,6 +1730,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.93846154
       objectReference: {fileID: 0}
+    - target: {fileID: 2808155464451476525, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2808155465197442728, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -1734,9 +1742,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 2808155465197442730, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3793439745701346914, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: m_Name
       value: PlayerShadowSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793439745701346914, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6573161439626650933, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: _requiredPowerAmount
