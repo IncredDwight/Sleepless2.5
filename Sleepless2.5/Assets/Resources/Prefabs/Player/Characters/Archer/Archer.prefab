@@ -224,9 +224,10 @@ GameObject:
   - component: {fileID: 6573161439626650933}
   - component: {fileID: 4189036785306870905}
   - component: {fileID: 64168725296369100}
+  - component: {fileID: -2355650988006600490}
   - component: {fileID: 6208157504084014916}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Archer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,6 +404,19 @@ MonoBehaviour:
   _attackKey: 323
   _abilityKey: 99
   _ultimateKey: 117
+--- !u!114 &-2355650988006600490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2808155464358828762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3755f0cad704036bb464524da53dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gainSpeed: 5
 --- !u!114 &6208157504084014916
 MonoBehaviour:
   m_ObjectHideFlags: 0
