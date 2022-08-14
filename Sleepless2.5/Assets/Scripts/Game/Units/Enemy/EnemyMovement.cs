@@ -31,8 +31,8 @@ public class EnemyMovement : MonoBehaviour, IMovable
         return _aiPath.maxSpeed;
     }
 
-    public float GetMovementDirection()
+    public Vector2 GetMovementDirection()
     {
-        return _aiPath.desiredVelocity.normalized.x;
+        return _aiPath.desiredVelocity;
     }
 }

@@ -310,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 25066916915668763}
   _target: 2
+  _arrow: {fileID: 4932368936024839787}
   _radius: 10
   _fireRate: 0.4
 --- !u!114 &-8406654809200387361

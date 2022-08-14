@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 221681571}
   - component: {fileID: 221681570}
   - component: {fileID: 221681569}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Border (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 479373489}
   - component: {fileID: 479373488}
   - component: {fileID: 479373487}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Border (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1561,7 +1561,7 @@ GameObject:
   - component: {fileID: 1791317022}
   - component: {fileID: 1791317021}
   - component: {fileID: 1791317020}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Border (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,7 +1720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2808155464358828767, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: _cooldown
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2808155464451476499, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
       propertyPath: m_Size.x
@@ -1760,6 +1760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64168725296369100, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
+    - {fileID: 1524375895380135641, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
 --- !u!1 &1966440005
 GameObject:
@@ -1897,6 +1898,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ebacccca59b45b280f3ce4e81e0779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1991562466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991562459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e217dcd43e85243d2a2772a10a6d7f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleportDistance: 10
 --- !u!4 &1991562468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2808155464358828766, guid: 038910a30adac4e71a75a6b702a5f6bd, type: 3}
@@ -2028,7 +2042,7 @@ GameObject:
   - component: {fileID: 2090321483}
   - component: {fileID: 2090321482}
   - component: {fileID: 2090321481}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
