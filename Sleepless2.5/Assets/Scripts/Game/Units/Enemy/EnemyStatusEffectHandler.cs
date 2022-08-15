@@ -14,7 +14,7 @@ public class EnemyStatusEffectHandler : MonoBehaviour, IEffectable
         else
         {
             StatusEffect statusEffect = (StatusEffect)gameObject.AddComponent(effectType);
-            statusEffect.SetData(data);
+            statusEffect.SetData(data, this);
         }
     }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StatusEffect : MonoBehaviour
 {
+    private IEffectable _effectHandler;
+
     protected StatusEffectData _data;
 
     private bool _isAffecting;
@@ -40,7 +42,7 @@ public class StatusEffect : MonoBehaviour
     protected virtual void EndEffect()
     {
         _isAffecting = false;
-        Destroy(this);
+        _effectHandler.RemoveEffect(_data);
     }
 
     protected virtual void Affect()
@@ -48,12 +50,13 @@ public class StatusEffect : MonoBehaviour
 
     }
 
-    public void SetData(StatusEffectData data)
+    public void SetData(StatusEffectData data, IEffectable effectHandler)
     {
         _data = data;
         _lifeTime = _data.LifeTime;
         _effectRate = _data.EffectRate;
         _effectAmount = _data.EffectAmount;
+        _effectHandler = effectHandler;
         StartEffect();
     }
 
