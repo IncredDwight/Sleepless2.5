@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59bf4692b282436aafb1d9d5b308f1c, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  Name: 
-  Sprite: {fileID: 0}
+  Name: Archer
+  Sprite: {fileID: -2207236230058056998, guid: e893bffe9fe4649ab9972269574867a0, type: 3}
