@@ -11,17 +11,23 @@ public class PlayerStatusEffectHandler : MonoBehaviour, IEffectable
     public delegate void EffectRemoved(StatusEffectData effect);
     public event EffectRemoved OnEffectRemoved;
 
+    public delegate void EffectReseted(StatusEffectData data);
+    public event EffectReseted OnEffectReseted;
+
     public void ApplyEffect(StatusEffectData data)
     {
         Type effectType = Type.GetType(data.Name);
         StatusEffect effect = (StatusEffect)gameObject.GetComponent(effectType);
         if (effect != null)
+        {
             effect.ResetEffect();
+            OnEffectReseted?.Invoke(data);
+        }
         else
         {
             StatusEffect statusEffect = (StatusEffect)gameObject.AddComponent(effectType);
             OnEffectApplied?.Invoke(data);
-            statusEffect.SetData(data);
+            statusEffect.SetData(data, this);
         }
     }
 
