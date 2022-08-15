@@ -16,4 +16,5 @@ MonoBehaviour:
   EffectAmount: 3
   EffectRate: 0
   LifeTime: 5
+  Icon: {fileID: 21300000, guid: 646674341b8ee4938836ba2cbf10aa8f, type: 3}
   Prefab: {fileID: 1961325293037508021, guid: 40907f4026ec1469da9dad20e446b90a, type: 3}

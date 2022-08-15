@@ -5,10 +5,10 @@ using System;
 
 public class PlayerStatusEffectHandler : MonoBehaviour, IEffectable
 {
-    public delegate void EffectApplied(StatusEffect effect);
+    public delegate void EffectApplied(StatusEffectData effect);
     public event EffectApplied OnEffectApplied;
 
-    public delegate void EffectRemoved(StatusEffect effect);
+    public delegate void EffectRemoved(StatusEffectData effect);
     public event EffectRemoved OnEffectRemoved;
 
     public void ApplyEffect(StatusEffectData data)
@@ -20,7 +20,7 @@ public class PlayerStatusEffectHandler : MonoBehaviour, IEffectable
         else
         {
             StatusEffect statusEffect = (StatusEffect)gameObject.AddComponent(effectType);
-            OnEffectApplied?.Invoke(statusEffect);
+            OnEffectApplied?.Invoke(data);
             statusEffect.SetData(data);
         }
     }
@@ -31,7 +31,7 @@ public class PlayerStatusEffectHandler : MonoBehaviour, IEffectable
         Component effect = gameObject.GetComponent(effectType);
         if (effect != null)
         {
-            OnEffectRemoved?.Invoke((StatusEffect)effect);
+            OnEffectRemoved?.Invoke(data);
             Destroy(effect);
         }
     }
