@@ -676,6 +676,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420036}
   - component: {fileID: 519420037}
+  - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -855,11 +856,83 @@ MonoBehaviour:
   _weaponJoystick: {fileID: 763879378}
   _abilityButton: {fileID: 507173399}
   _ultimateButton: {fileID: 1959263960}
+--- !u!114 &519420038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0a93f0b54784036a533b872a5484f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackKey: 323
+  _abilityKey: 99
+  _ultimateKey: 117
 --- !u!224 &602188560 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7359525911951641443, guid: 6f748886e77e64e12877dce18d08097b, type: 3}
   m_PrefabInstance: {fileID: 7359525912516075635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &664867125
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8204610856377367311, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8204610856377367314, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ce3a1a1e69f941d0ba28b40516621a7, type: 3}
 --- !u!224 &763879377 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9201968788962493643, guid: dd2107941e25f43cdb183911499a0c45, type: 3}
@@ -1184,7 +1257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &958137937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,7 +1491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1508774721
 MonoBehaviour:
   m_ObjectHideFlags: 0
