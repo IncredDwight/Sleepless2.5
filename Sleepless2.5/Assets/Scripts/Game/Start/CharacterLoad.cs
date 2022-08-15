@@ -8,9 +8,10 @@ public class CharacterLoad : MonoBehaviour
 
     private const string CharacterIndexSaveKey = "CharacterIndex";
 
-    private void Awake()
+    private void Start()
     {
-        Instantiate(_characterPrefabs[PlayerPrefs.GetInt(CharacterIndexSaveKey)], Vector3.zero, Quaternion.identity);
+        GameObject character = Instantiate(_characterPrefabs[PlayerPrefs.GetInt(CharacterIndexSaveKey)], Vector3.zero, Quaternion.identity);
+        GameEvents.SendCharacterSpawned(character);
     }
 
 

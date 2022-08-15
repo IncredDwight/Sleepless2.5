@@ -16,7 +16,7 @@ public class UltimateHandler : MonoBehaviour
     {
         _ultimate = GetComponent<IUltimate>();
         _playerInput = GetComponent<PlayerInput>();
-        GameEvents.Instance.OnUnitDied += AddPower;
+        GameEvents.OnUnitDied += AddPower;
     }
 
     private void Update()

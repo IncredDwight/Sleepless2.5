@@ -8,7 +8,7 @@ public class DirectionView : MonoBehaviour
     private IMovable _movement;
     [SerializeField]private SpriteRenderer _spriteRenderer;
 
-    private void Awake()
+    private void Start()
     {
         _movement = GetComponent<IMovable>();
     }
