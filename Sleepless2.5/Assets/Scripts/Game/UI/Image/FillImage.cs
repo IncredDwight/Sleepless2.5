@@ -24,7 +24,6 @@ public class FillImage : MonoBehaviour
     public void ResetFill()
     {
         _image.fillAmount = 0;
-        Debug.Log("reset");
     }
 
     public void SetFillTime(float time)
