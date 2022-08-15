@@ -266,7 +266,6 @@ GameObject:
   - component: {fileID: 4058700199751896177}
   - component: {fileID: 5013486423837717383}
   - component: {fileID: 2632782881195848395}
-  - component: {fileID: 2182009181967489918}
   - component: {fileID: 5227617641575784950}
   m_Layer: 6
   m_Name: Demon
@@ -431,21 +430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statusEffects:
   - {fileID: 11400000, guid: 2af421a47298b4cafb7a6d305bd53244, type: 2}
---- !u!114 &2182009181967489918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4058700199751896168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f0a93f0b54784036a533b872a5484f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackKey: 323
-  _abilityKey: 99
-  _ultimateKey: 117
 --- !u!114 &5227617641575784950
 MonoBehaviour:
   m_ObjectHideFlags: 0

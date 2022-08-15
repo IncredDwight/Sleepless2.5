@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerInput))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour, IMovable
 {
@@ -15,7 +14,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
     private void Awake()
     {
         _rigidbody2d = GetComponent<Rigidbody2D>();
-        _playerInput = GetComponent<PlayerInput>();
+        _playerInput = FindObjectOfType<PlayerInput>();
     }
 
     private void Update()

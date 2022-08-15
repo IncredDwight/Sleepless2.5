@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(IUltimate))]
-[RequireComponent(typeof(PlayerInput))]
 public class UltimateHandler : MonoBehaviour
 {
     [SerializeField] private float _requiredPowerAmount = 1000;
@@ -15,7 +14,7 @@ public class UltimateHandler : MonoBehaviour
     private void Awake()
     {
         _ultimate = GetComponent<IUltimate>();
-        _playerInput = GetComponent<PlayerInput>();
+        _playerInput = FindObjectOfType<PlayerInput>();
         GameEvents.OnUnitDied += AddPower;
     }
 
