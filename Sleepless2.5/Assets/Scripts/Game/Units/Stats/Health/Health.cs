@@ -29,7 +29,7 @@ public class Health : MonoBehaviour, ITakeDamage, IHeal
         if (_health <= 0)
         {
             _health = 0;
-            GameEvents.Instance.SendUnitDied(_maxHealth);
+            GameEvents.SendUnitDied(_maxHealth);
             _death.Die();
         }
 

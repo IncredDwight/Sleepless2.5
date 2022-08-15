@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GameEvents : Singleton<GameEvents>
+public static class GameEvents
 {
-    public Action<float> OnUnitDied;
-    public void SendUnitDied(float health)
+    public static Action<float> OnUnitDied;
+    public static void SendUnitDied(float health)
     {
         OnUnitDied?.Invoke(health);
+    }
+
+    public static Action<GameObject> OnCharacterSpawned;
+    public static void SendCharacterSpawned(GameObject prefab)
+    {
+        OnCharacterSpawned?.Invoke(prefab);
     }
 }

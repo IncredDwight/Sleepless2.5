@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour, IMovable
     private AIPath _aiPath;
     private Target _target = Target.Player;
 
-    private void Awake()
+    private void Start()
     {
         _aiPath = GetComponent<AIPath>();
         GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag(_target.ToString()).transform;
@@ -33,6 +33,8 @@ public class EnemyMovement : MonoBehaviour, IMovable
 
     public Vector2 GetMovementDirection()
     {
+        if (_aiPath == null)
+            return Vector2.zero;
         return _aiPath.desiredVelocity;
     }
 }
