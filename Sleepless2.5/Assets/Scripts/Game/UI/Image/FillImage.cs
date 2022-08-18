@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class FillImage : MonoBehaviour
 {
     [SerializeField] private float _fillTime = 1;
+    [SerializeField] private bool _isReversed;
     private float _maxFill = 1;
 
     private Image _image;
@@ -18,12 +19,12 @@ public class FillImage : MonoBehaviour
 
     private void Update()
     {
-        _image.fillAmount += Time.deltaTime * _maxFill / _fillTime;
+        _image.fillAmount += (Time.deltaTime * _maxFill / _fillTime) * ((_isReversed) ? -1 : 1);
     }
 
     public void ResetFill()
     {
-        _image.fillAmount = 0;
+        _image.fillAmount = (_isReversed) ? 1 : 0;
     }
 
     public void SetFillTime(float time)

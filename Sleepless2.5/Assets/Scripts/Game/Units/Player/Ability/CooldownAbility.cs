@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(IAbility))]
 public class CooldownAbility : MonoBehaviour
 {
+    public delegate void AbilityExecuted(float cooldown);
+    public AbilityExecuted OnAbilityExecuted;
+
     [SerializeField] private float _cooldown;
     private float _currentCooldown;
 
@@ -22,6 +25,7 @@ public class CooldownAbility : MonoBehaviour
         if (_playerInput.GetAbilityKey() && _currentCooldown <= 0)
         {
             _ability.Execute();
+            OnAbilityExecuted?.Invoke(_cooldown);
             _currentCooldown = _cooldown;
         }
 

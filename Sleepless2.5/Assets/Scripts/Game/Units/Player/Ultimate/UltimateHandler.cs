@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(IUltimate))]
 public class UltimateHandler : MonoBehaviour
 {
+    public delegate void PowerAdded(float amount);
+    public PowerAdded OnPowerAdded;
+
     [SerializeField] private float _requiredPowerAmount = 1000;
     private float _power;
 
@@ -24,6 +27,7 @@ public class UltimateHandler : MonoBehaviour
         {
             _ultimate.Execute();
             _power = 0;
+            OnPowerAdded?.Invoke(_power);
         }
     }
 
@@ -32,6 +36,7 @@ public class UltimateHandler : MonoBehaviour
         _power += amount;
         if (_power >= _requiredPowerAmount)
             _power = _requiredPowerAmount;
+        OnPowerAdded?.Invoke(_power / _requiredPowerAmount);
     }
 
 
