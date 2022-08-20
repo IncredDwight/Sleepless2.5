@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Demon
   m_EditorClassIdentifier: 
   Name: Demon
-  Sprite: {fileID: 8596640243658272642, guid: 1acd3832400174315baa207b04ff708c, type: 3}
+  Sprite: {fileID: 8765999556805865277, guid: de1b5c610fcf2409cb9d7f8405619e61, type: 3}

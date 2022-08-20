@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 094c67b22ad074e7989526332b09e94a
+guid: d1b76695c2bf14a339b3e0a51c21cb66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8399011212269539787
-    second: Stone_0
+      213: 2572236292851511218
+    second: Trees_0
   - first:
-      213: -6471164996032937220
-    second: Stone_1
+      213: 6224024930817484846
+    second: Trees_1
   - first:
-      213: -2685253163611956912
-    second: Stone_2
-  - first:
-      213: -2657622170025962153
-    second: Stone_3
-  - first:
-      213: 1779410674617963968
-    second: Stone_4
+      213: -8911251428918342384
+    second: Trees_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 260
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,106 +112,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stone_0
+      name: Trees_0
       rect:
         serializedVersion: 2
-        x: 108
-        y: 1452
-        width: 596
-        height: 364
+        x: 524
+        y: 572
+        width: 685
+        height: 1364
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc159db92384f8470800000000000000
-      internalID: 8399011212269539787
+      spriteID: 2bf28c1b74b62b320800000000000000
+      internalID: 2572236292851511218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stone_1
+      name: Trees_1
       rect:
         serializedVersion: 2
-        x: 924
-        y: 1500
-        width: 360
-        height: 272
+        x: 1211
+        y: 557
+        width: 672
+        height: 1148
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf2c388c8bdc136a0800000000000000
-      internalID: -6471164996032937220
+      spriteID: e282d82c2bd206650800000000000000
+      internalID: 6224024930817484846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stone_2
+      name: Trees_2
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 1536
-        width: 424
-        height: 272
+        x: 1268
+        y: 92
+        width: 637
+        height: 382
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0595aea89701cbad0800000000000000
-      internalID: -2685253163611956912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stone_3
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 644
-        width: 804
-        height: 540
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 755566097ba3e1bd0800000000000000
-      internalID: -2657622170025962153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stone_4
-      rect:
-        serializedVersion: 2
-        x: 1108
-        y: 632
-        width: 840
-        height: 608
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c55422b49cb1b810800000000000000
-      internalID: 1779410674617963968
+      spriteID: 01d412b0a00e45480800000000000000
+      internalID: -8911251428918342384
       vertices: []
       indices: 
       edges: []
