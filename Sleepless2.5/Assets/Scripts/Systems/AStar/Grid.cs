@@ -7,6 +7,7 @@ public class Grid : MonoBehaviour
     [SerializeField] private Vector2 _size;
     [SerializeField] private float _nodeRadius = 1;
     [SerializeField] private float _gridDisplayOffset = 0.1f;
+
     private Node[,] _grid;
 
 
@@ -29,7 +30,17 @@ public class Grid : MonoBehaviour
                 bool isWalkable = Physics2D.OverlapCircle(worldPosition, _nodeRadius) == null;
                 _grid[x, y] = new Node(isWalkable, worldPosition);
             }
-        Debug.Log($"{xSize} {ySize}");
+    }
+
+    private Node GetNodeFromPosition(Vector2 position)
+    {
+        float percentX = Mathf.Clamp01((position.x + _size.x / 2) / _size.x);
+        float percentY = Mathf.Clamp01((position.y + _size.y / 2) / _size.y);
+
+        int x = Mathf.RoundToInt((_grid.GetLength(0) - 1) * percentX);
+        int y = Mathf.RoundToInt((_grid.GetLength(1) - 1) * percentY);
+
+        return _grid[x, y];
     }
 
     private void OnDrawGizmos()
