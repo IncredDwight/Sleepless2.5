@@ -10,6 +10,8 @@ public class Grid : MonoBehaviour
 
     private Node[,] _grid;
 
+    public List<Node> Path;
+
 
     private void Start()
     {
@@ -28,11 +30,11 @@ public class Grid : MonoBehaviour
             {
                 Vector3 worldPosition = worldBottomLeft + Vector3.right * (x * _nodeRadius * 2 + _nodeRadius) + Vector3.up * (y * _nodeRadius * 2 + _nodeRadius);
                 bool isWalkable = Physics2D.OverlapCircle(worldPosition, _nodeRadius) == null;
-                _grid[x, y] = new Node(isWalkable, worldPosition);
+                _grid[x, y] = new Node(isWalkable, worldPosition, x, y);
             }
     }
 
-    private Node GetNodeFromPosition(Vector2 position)
+    public Node GetNodeFromPosition(Vector2 position)
     {
         float percentX = Mathf.Clamp01((position.x + _size.x / 2) / _size.x);
         float percentY = Mathf.Clamp01((position.y + _size.y / 2) / _size.y);
@@ -43,6 +45,24 @@ public class Grid : MonoBehaviour
         return _grid[x, y];
     }
 
+    public List<Node> GetNodeNeighbours(Node node)
+    {
+        List<Node> neighbours = new List<Node>();
+
+        for (int x = -1; x <= 1 ; x++)
+            for (int y = -1; y <= 1; y++)
+                if(!(x == 0 && y == 0))
+                {
+                    int checkX = node.GetX() + x;
+                    int checkY = node.GetY() + y;
+
+                    if (checkX >= 0 && checkX < _grid.GetLength(0) && checkY >= 0 && checkX < _grid.GetLength(1))
+                        neighbours.Add(_grid[checkX, checkY]);
+                }
+
+        return neighbours;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, _size);
@@ -50,6 +70,11 @@ public class Grid : MonoBehaviour
             foreach(Node node in _grid)
             {
                 Gizmos.color = (node.IsWalkabe()) ? Color.white : Color.red;
+                if (Path != null)
+                {
+                    if (Path.Contains(node))
+                        Gizmos.color = Color.black;
+                }
                 Gizmos.DrawCube(node.GetWorldPosition(), Vector3.one * (_nodeRadius * 2 - _gridDisplayOffset));
             }
     }

@@ -15,7 +15,6 @@ public class UltimateButton : MonoBehaviour
 
     private void UpdateFill(float amount)
     {
-        Debug.Log("Fill update");
         _fillImage.fillAmount = 1 - amount;
     }
 
