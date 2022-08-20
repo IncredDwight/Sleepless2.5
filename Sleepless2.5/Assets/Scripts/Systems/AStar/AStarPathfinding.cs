@@ -6,21 +6,17 @@ public class AStarPathfinding : MonoBehaviour
 {
     [SerializeField] private Grid _grid;
 
-    [SerializeField] private Transform _seeker;
-    [SerializeField] private Transform _target;
+    private List<Node> _path;
 
-    private void Update()
+    public void FindPath(Vector3 startPosition, Vector3 targetPosition, out List<Node> path)
     {
-        FindPath(_seeker.position, _target.position);
-    }
+        path = new List<Node>();
 
-    private void FindPath(Vector3 startPosition, Vector3 targetPosition)
-    {
         Node startNode = _grid.GetNodeFromPosition(startPosition);
         Node targetNode = _grid.GetNodeFromPosition(targetPosition);
 
         List<Node> nodesToEvaluate = new List<Node>();
-        HashSet<Node> evaluatedNodes = new HashSet<Node>();
+        List<Node> evaluatedNodes = new List<Node>();
         nodesToEvaluate.Add(startNode);
 
         while(nodesToEvaluate.Count > 0)
@@ -37,7 +33,7 @@ public class AStarPathfinding : MonoBehaviour
 
             if (currentNode == targetNode)
             {
-                GetPath(startNode, targetNode);
+                path = GetPath(startNode, targetNode);
                 return;
             }
 
@@ -63,7 +59,6 @@ public class AStarPathfinding : MonoBehaviour
 
     private List<Node> GetPath(Node startNode, Node endNode)
     {
-        Debug.Log("Path");
         List<Node> path = new List<Node>();
         Node currentNode = endNode;
 
@@ -92,5 +87,10 @@ public class AStarPathfinding : MonoBehaviour
             (distanceX > distanceY) ?
             diagnalMoveCost * distanceY + horizontalMoveCost * (distanceX - distanceY) :
             diagnalMoveCost * distanceX + horizontalMoveCost * (distanceY - distanceX);
+    }
+
+    public List<Node> GetPath()
+    {
+        return _path;
     }
 }

@@ -74,8 +74,9 @@ public class Grid : MonoBehaviour
                 {
                     if (Path.Contains(node))
                         Gizmos.color = Color.black;
+                    if (!node.IsWalkabe() || Path.Contains(node))
+                        Gizmos.DrawCube(node.GetWorldPosition(), Vector3.one * (_nodeRadius * 2 - _gridDisplayOffset));
                 }
-                Gizmos.DrawCube(node.GetWorldPosition(), Vector3.one * (_nodeRadius * 2 - _gridDisplayOffset));
             }
     }
 }

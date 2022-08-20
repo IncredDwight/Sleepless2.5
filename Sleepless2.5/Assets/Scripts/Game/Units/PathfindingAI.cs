@@ -5,6 +5,7 @@ using Pathfinding;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Seeker))]
+[RequireComponent(typeof(AStarPathfinding))]
 public class PathfindingAI : MonoBehaviour, IMovable
 {
     [SerializeField] private Target _target;
@@ -15,10 +16,11 @@ public class PathfindingAI : MonoBehaviour, IMovable
 
     [SerializeField] private float _nextWaypointDistance = 0.5f;
 
-    private Path _path;
+    private List<Node> _path;
     private int _currentWaypoint;
 
     private Seeker _seeker;
+    private AStarPathfinding _aStarPathfinding;
     private Rigidbody2D _rigidbody2D;
 
     [SerializeField] private Vector2 _kickOffDirection;
@@ -26,6 +28,7 @@ public class PathfindingAI : MonoBehaviour, IMovable
     private void Start()
     {
         _seeker = GetComponent<Seeker>();
+        _aStarPathfinding = GetComponent<AStarPathfinding>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         
 
@@ -34,8 +37,10 @@ public class PathfindingAI : MonoBehaviour, IMovable
 
     private void UpdatePath()
     {
-        _currentTarget = GameObject.FindGameObjectWithTag(_target.ToString()).transform;
-        _seeker.StartPath(_rigidbody2D.position, _currentTarget.position, OnPathComplete);
+        if(_currentTarget == null)
+            _currentTarget = GameObject.FindGameObjectWithTag(_target.ToString()).transform;
+        _aStarPathfinding.FindPath(_rigidbody2D.position, _currentTarget.position, out _path);
+        //_seeker.StartPath(_rigidbody2D.position, _currentTarget.position, OnPathComplete);
         
     }
 
@@ -43,17 +48,17 @@ public class PathfindingAI : MonoBehaviour, IMovable
     {
         if(_path != null)
         {
-            if (_currentWaypoint >= _path.vectorPath.Count)
+            if (_currentWaypoint >= _path.Count)
             {
                 return;
             }
 
-            Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypoint] - _rigidbody2D.position).normalized;
+            Vector2 direction = ((Vector2)_path[_currentWaypoint].GetWorldPosition() - _rigidbody2D.position).normalized;
             Vector2 force = direction * _speed * _speedMultiplier * Time.deltaTime;
             if(_canMove)
                 _rigidbody2D.velocity = force;
 
-            float distance = Vector2.Distance(_rigidbody2D.position, _path.vectorPath[_currentWaypoint]);
+            float distance = Vector2.Distance(_rigidbody2D.position, _path[_currentWaypoint].GetWorldPosition());
 
             if (distance < _nextWaypointDistance)
                 _currentWaypoint++;
@@ -64,14 +69,14 @@ public class PathfindingAI : MonoBehaviour, IMovable
             StartCoroutine(KickOff(_kickOffDirection));
     }
 
-    private void OnPathComplete(Path path)
+    /*private void OnPathComplete(Path path)
     {
         if (!path.error)
         {
             _path = path;
             _currentWaypoint = 0;
         }
-    }
+    }*/
 
     public IEnumerator KickOff(Vector2 direction, float power = 10, float kickOffTime = 0.5f)
     {

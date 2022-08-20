@@ -17,7 +17,6 @@ public class MapGenerator : MonoBehaviour
         Transform parent = new GameObject(_prefabName).transform;
         _tilesGenerator.Generate(_minCoordinate, _maxCoordinate, out Transform tilesParent);
         _decorationsGenerator.Generate(_minCoordinate, _maxCoordinate, out Transform decorationsParent);
-        AstarPath.active.Scan(AstarPath.active.data.gridGraph);
         tilesParent.parent = parent;
         decorationsParent.parent = parent;
     }
