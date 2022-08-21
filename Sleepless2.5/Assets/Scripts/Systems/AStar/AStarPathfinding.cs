@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AStarPathfinding : MonoBehaviour
 {
     [SerializeField] private Grid _grid;
+
+    private void Awake()
+    {
+        _grid = FindObjectOfType<Grid>();
+    }
 
     public void FindPath(Vector3 startPosition, Vector3 targetPosition, out List<Node> path)
     {
@@ -14,7 +20,7 @@ public class AStarPathfinding : MonoBehaviour
         Node targetNode = _grid.GetNodeFromPosition(targetPosition);
 
         Heap<Node> nodesToEvaluate = new Heap<Node>(32400);
-        List<Node> evaluatedNodes = new List<Node>();
+        HashSet<Node> evaluatedNodes = new HashSet<Node>();
         nodesToEvaluate.Add(startNode);
 
         while(nodesToEvaluate.Count > 0)
