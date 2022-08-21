@@ -36,6 +36,11 @@ public class Heap<T> where T : IHeapItem<T>
         return item;
     }
 
+    public bool Contains(T item)
+    {
+        return Equals(_items[item.HeapIndex], item);
+    }
+
     public void UpdateItem(T item)
     {
         SortUp(item);
@@ -57,26 +62,41 @@ public class Heap<T> where T : IHeapItem<T>
 
     private void SortDown(T item)
     {
-        int swapIndex = 0;
-        int childIndexLeft = 0;
-        int childIndexRight = 0;
-
-        while (item.CompareTo(_items[swapIndex]) < 0 || childIndexLeft < _currentItemsCount)
+        while (true)
         {
-            childIndexLeft = item.HeapIndex * 2 + 1;
-            childIndexRight = item.HeapIndex * 2 + 2;
+            int childIndexLeft = item.HeapIndex * 2 + 1;
+            int childIndexRight = item.HeapIndex * 2 + 2;
+            int swapIndex = 0;
 
-            swapIndex = childIndexLeft;
-            if (childIndexRight < _currentItemsCount)
+            if (childIndexLeft < _currentItemsCount)
             {
-                if (_items[childIndexLeft].CompareTo(_items[childIndexRight]) < 0)
+                swapIndex = childIndexLeft;
+
+                if (childIndexRight < _currentItemsCount)
                 {
-                    swapIndex = childIndexRight;
+                    if (_items[childIndexLeft].CompareTo(_items[childIndexRight]) < 0)
+                    {
+                        swapIndex = childIndexRight;
+                    }
                 }
+
+                if (item.CompareTo(_items[swapIndex]) < 0)
+                {
+                    Swap(item, _items[swapIndex]);
+                }
+                else
+                {
+                    return;
+                }
+
             }
-            Swap(item, _items[swapIndex]);
+            else
+            {
+                return;
+            }
+
         }
-        
+
     }
 
     private void Swap(T item1, T item2)

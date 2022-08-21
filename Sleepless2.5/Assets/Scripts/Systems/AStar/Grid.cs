@@ -11,12 +11,14 @@ public class Grid : MonoBehaviour
     private Node[,] _grid;
 
     public List<Node> Path;
+    public int GridSize;
 
 
     private void Start()
     {
         int gridXSize = Mathf.RoundToInt(_size.x / (_nodeRadius * 2));
         int gridYSize = Mathf.RoundToInt(_size.y / (_nodeRadius * 2));
+        GridSize = gridXSize * gridYSize;
         CreateGrid(gridXSize, gridYSize);
     }
 
