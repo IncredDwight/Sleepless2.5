@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AStarPathfinding : MonoBehaviour
 {
     [SerializeField] private Grid _grid;
 
-    private List<Node> _path;
+    private void Awake()
+    {
+        _grid = FindObjectOfType<Grid>();
+    }
 
     public void FindPath(Vector3 startPosition, Vector3 targetPosition, out List<Node> path)
     {
@@ -15,20 +19,13 @@ public class AStarPathfinding : MonoBehaviour
         Node startNode = _grid.GetNodeFromPosition(startPosition);
         Node targetNode = _grid.GetNodeFromPosition(targetPosition);
 
-        List<Node> nodesToEvaluate = new List<Node>();
-        List<Node> evaluatedNodes = new List<Node>();
+        Heap<Node> nodesToEvaluate = new Heap<Node>(32400);
+        HashSet<Node> evaluatedNodes = new HashSet<Node>();
         nodesToEvaluate.Add(startNode);
 
         while(nodesToEvaluate.Count > 0)
         {
-            Node currentNode = nodesToEvaluate[0];
-            for (int i = 1; i < nodesToEvaluate.Count; i++)
-            {
-                if (nodesToEvaluate[i].Cost < currentNode.Cost)
-                    currentNode = nodesToEvaluate[i];
-            }
-
-            nodesToEvaluate.Remove(currentNode);
+            Node currentNode = nodesToEvaluate.PullOffFirst();
             evaluatedNodes.Add(currentNode);
 
             if (currentNode == targetNode)
@@ -87,10 +84,5 @@ public class AStarPathfinding : MonoBehaviour
             (distanceX > distanceY) ?
             diagnalMoveCost * distanceY + horizontalMoveCost * (distanceX - distanceY) :
             diagnalMoveCost * distanceX + horizontalMoveCost * (distanceY - distanceX);
-    }
-
-    public List<Node> GetPath()
-    {
-        return _path;
     }
 }
