@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4058700198644318232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4587342769557412351}
@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 2632782881195848395}
   - component: {fileID: 5227617641575784950}
   - component: {fileID: 5651924395994777682}
+  - component: {fileID: 605695858353095117}
   m_Layer: 6
   m_Name: Demon
   m_TagString: Player
@@ -304,8 +305,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.9546247}
-  m_Size: {x: 1.25, y: 2.9092503}
+  m_Offset: {x: 0, y: 1.5899445}
+  m_Size: {x: 1.25, y: 2.4093616}
   m_Direction: 0
 --- !u!50 &4058700199751896170
 Rigidbody2D:
@@ -459,6 +460,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stealAmount: 0.1
+--- !u!210 &605695858353095117
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4058700199751896168}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &4058700200062053606
 GameObject:
   m_ObjectHideFlags: 0

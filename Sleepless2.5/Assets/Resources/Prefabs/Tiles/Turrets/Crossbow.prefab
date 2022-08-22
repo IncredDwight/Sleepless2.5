@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4355883340556005030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.000000059604645, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8104037630602413098}
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 5600011519389142596}
   - component: {fileID: -6740717850006026847}
   - component: {fileID: -2043671755187986089}
+  - component: {fileID: 619908612581972259}
   m_Layer: 2
   m_Name: Crossbow
   m_TagString: Untagged
@@ -310,7 +311,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 25066916915668763}
   _target: 2
-  _arrow: {fileID: 4932368936024839787}
   _radius: 10
   _fireRate: 0.4
 --- !u!114 &-8406654809200387361
@@ -364,6 +364,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _returnTime: 60
+--- !u!210 &619908612581972259
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104037630602413103}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &8907318900274293540
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8907318900274293540}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.015, y: 0.67, z: 0}
+  m_LocalPosition: {x: -0.015000059, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6259813781388156158}
