@@ -46,16 +46,32 @@ public class Heap<T> where T : IHeapItem<T>
         SortUp(item);
     }
 
+    public void Clear()
+    {
+        for (int i = 0; i < _items.Length; i++)
+        {
+            _items[i] = default(T);
+        }
+        _currentItemsCount = 0;
+    }
+
     private void SortUp(T item)
     {
         int parentIndex = (item.HeapIndex - 1) / 2;
-        T parentItem = _items[parentIndex];
 
-        while (item.CompareTo(parentItem) > 0)
+        while (true)
         {
-            Swap(item, parentItem);
+            T parentItem = _items[parentIndex];
+            if (item.CompareTo(parentItem) > 0)
+            {
+                Swap(item, parentItem);
+            }
+            else
+            {
+                break;
+            }
+
             parentIndex = (item.HeapIndex - 1) / 2;
-            parentItem = _items[parentIndex];
         }
 
     }

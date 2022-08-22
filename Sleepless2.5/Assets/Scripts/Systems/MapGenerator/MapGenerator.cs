@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class MapGenerator : MonoBehaviour
         Transform parent = new GameObject(_prefabName).transform;
         _tilesGenerator.Generate(_minCoordinate, _maxCoordinate, out Transform tilesParent);
         _decorationsGenerator.Generate(_minCoordinate, _maxCoordinate, out Transform decorationsParent);
+        AstarPath.active.Scan();
+
         tilesParent.parent = parent;
         decorationsParent.parent = parent;
     }

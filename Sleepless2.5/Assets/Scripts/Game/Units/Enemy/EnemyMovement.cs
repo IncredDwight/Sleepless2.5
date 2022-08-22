@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour, IMovable
     private void Start()
     {
         _aiPath = GetComponent<AIPath>();
-        GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag(_target.ToString()).transform;
+        //GetComponent<AIDestinationSetter>().target = GameObject.FindGameObjectWithTag(_target.ToString()).transform;
     }
 
     private void Update()
