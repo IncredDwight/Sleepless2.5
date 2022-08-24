@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: 1
-  _speed: 3
+  _speed: 1
   _nextWaypointDistance: 3
   _kickOffDirection: {x: 1, y: 1}
 --- !u!114 &5237305038052310686
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 3641214404896734332}
   _target: 1
-  _radius: 3
+  _radius: 10
   _fireRate: 1
 --- !u!114 &7649740366981739724
 MonoBehaviour:
