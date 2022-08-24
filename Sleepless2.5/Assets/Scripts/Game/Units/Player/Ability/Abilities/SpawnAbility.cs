@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretAbility : MonoBehaviour, IAbility
+public class SpawnAbility : MonoBehaviour, IAbility
 {
     [SerializeField] private GameObject _turretPrefab;
 

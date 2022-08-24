@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205aa302340104611b60eb71465d4a55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldown: 60
+  _cooldown: 15
 --- !u!114 &1524375895380135641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f915516c3794c40b9c75518c6a75db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turretPrefab: {fileID: 8104037630602413103, guid: 531ddb2ecd04e4a4eb1955c0a9e89632, type: 3}
+  _turretPrefab: {fileID: 3764939935608547087, guid: 3c279b9b72fef4dfe83d342af248ad59, type: 3}
 --- !u!114 &2808155464358828739
 MonoBehaviour:
   m_ObjectHideFlags: 0
